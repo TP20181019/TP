@@ -5,7 +5,6 @@ public class NoParamsCommand extends Command{
 	public NoParamsCommand() {
 		// TODO Auto-generated constructor stub
 		
-		
 	}
 
 }
