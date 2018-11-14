@@ -9,8 +9,23 @@ package tp.p1.plants;
  */
 public class Peashooter extends Plants{
 	
-	public Peashooter(int x, int y, int vida) {
+	private int hurt;
+	
+	public Peashooter(int x, int y, int vida, int hurt) {
 		super (x,y,vida);
+		
 	}
 
+	public int getHurt() {
+		return hurt;
+	}
+
+	public void setHurt(int hurt) {
+		this.hurt = hurt;
+	}
+	public boolean aparecer (){
+		return false;
+		
+		
+	}
 }

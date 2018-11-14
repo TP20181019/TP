@@ -1,6 +1,9 @@
 package tp.p1.plants;
 
-public class Plants {
+public abstract class Plants {
+	
+	
+	
 	
 	private int x;
 	private int y;
@@ -9,10 +12,13 @@ public class Plants {
 
 	public Plants(int x, int y, int vida) {
 		// TODO Auto-generated constructor stub
+		
 		this.x = x;
 		this.y = y;
 		this.vida = vida;
 		this.cycle = 0;
+	
+		
 	}
 	public int getVida() {
 		return vida;
@@ -38,5 +44,12 @@ public class Plants {
 	public void setY(int y) {
 		this.y = y;
 	}
+
+	public void update() {
+		
+	}
+	
+
+	
 }
 

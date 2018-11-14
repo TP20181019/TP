@@ -1,11 +1,12 @@
 package tp.p1.factory;
 
-public class PlantFactory {
+public class PlantsFactory {
 
-	public PlantFactory() {
+	public PlantsFactory() {
 		// TODO Auto-generated constructor stub
 	}
-/*
+	
+/*	
 	private static Plant[] availablePlants = {
 			...
 			};
@@ -15,4 +16,6 @@ public class PlantFactory {
 			public static String listOfAvilablePlants() {
 			...
 			}*/
+	
+	getZombies ( String name); 
 }
