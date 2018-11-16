@@ -1,16 +1,11 @@
-package tp.p1.plants;
 
-public abstract class Plants {
-	
-	
-	
-	
+public abstract class GameObject {
 	private int x;
 	private int y;
 	private int vida;
 	private int cycle; 
 
-	public Plants(int x, int y, int vida) {
+	public GameObject (int x, int y, int vida) {
 		// TODO Auto-generated constructor stub
 		
 		this.x = x;
@@ -50,6 +45,4 @@ public abstract class Plants {
 	}
 	
 
-	
 }
-
