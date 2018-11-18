@@ -8,7 +8,6 @@ import java.util.Random;
 import tp.p1.lists.PeashooterList;
 import tp.p1.lists.SunflowerList;
 import tp.p1.lists.ZombieList;
-import tp.p1.logic.Level;
 import tp.p1.logic.SuncoinManager;
 import tp.p1.logic.ZombieManager;
 import tp.p1.objects.Zombie;

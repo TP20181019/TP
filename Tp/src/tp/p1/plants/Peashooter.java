@@ -9,12 +9,13 @@ import tp.p1.objects.Plants;
  * @author Michelle
  *
  */
-public class Peashooter extends Plants{
+public class Peashooter /*extends Plants*/{
 	
 	private int hurt;
 	
-	public Peashooter(int x, int y, int vida, int hurt) {
-		super (x,y,vida);
+	public Peashooter () {
+		//super (x,y,vida);
+		//this.hurt = hurt;
 		
 	}
 

@@ -5,6 +5,8 @@ package tp.p1.logic;
 
 import java.util.Random;
 
+import tp.p1.controller.Level;
+
 /**
  * @author Michelle
  *

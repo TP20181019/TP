@@ -1,19 +1,12 @@
 /**
  * 
  */
-package tp.p1;
+package tp.p1.controller;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import tp.p1.controller.Controller;
-import tp.p1.controller.Game;
-import tp.p1.logic.Level;
 
-/**
- * @author Michelle
- *
- */
 public class PlantsVsZombies {
 
 	/**
