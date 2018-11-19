@@ -17,6 +17,9 @@ public class AddCommand extends Command{
 		this.plantName = plantName;
 		
 	}
+	public AddCommand() {
+		super("", "", "");
+	}
 
 	@Override
 	public void execute(Game game, Controller controller) {

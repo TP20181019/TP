@@ -8,16 +8,21 @@ public class HelpCommand extends Command {
 	public HelpCommand(String commandText, String commandTextMsg, String helpTextMsg) {
 		super(commandText, commandTextMsg,helpTextMsg);
 	}
+	public HelpCommand() {
+		super("", "", "");
+	}
 
 	@Override
 	public void execute(Game game, Controller controller) {
-		// TODO Auto-generated method stub
+		game.help();
 		
 	}
 
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
-		// TODO Auto-generated method stub
-		return null;
+		if ((commandWords.length==1)&& (commandWords[0].equalsIgnoreCase("HELP")))
+			return new HelpCommand("Help", "help","" );
+		else 
+			return null;
 	}
 }

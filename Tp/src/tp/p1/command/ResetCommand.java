@@ -8,6 +8,9 @@ public class ResetCommand extends Command {
 	public ResetCommand(String commandText, String commandTextMsg, String helpTextMsg) {
 		super(commandText, commandTextMsg,helpTextMsg);
 	}
+	public ResetCommand() {
+		super("", "", "");
+	}
 
 	@Override
 	public void execute(Game game, Controller controller) {
