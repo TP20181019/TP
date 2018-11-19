@@ -1,9 +1,7 @@
 /**
  * 
  */
-package tp.p1.plants;
-
-import tp.p1.objects.Plants;
+package tp.p1.objects;
 
 /**
  * @author Michelle

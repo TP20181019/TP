@@ -10,9 +10,9 @@ import tp.p1.lists.SunflowerList;
 import tp.p1.lists.ZombieList;
 import tp.p1.logic.SuncoinManager;
 import tp.p1.logic.ZombieManager;
+import tp.p1.objects.Peashooter;
+import tp.p1.objects.Sunflower;
 import tp.p1.objects.Zombie;
-import tp.p1.plants.Peashooter;
-import tp.p1.plants.Sunflower;
 
 /**
  * @author Michelle

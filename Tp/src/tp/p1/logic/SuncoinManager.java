@@ -3,7 +3,7 @@
  */
 package tp.p1.logic;
 
-import tp.p1.plants.Sunflower;
+import tp.p1.objects.Sunflower;
 
 /**
  * @author Michelle

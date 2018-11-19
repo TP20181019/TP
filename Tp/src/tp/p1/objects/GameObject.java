@@ -1,3 +1,4 @@
+package tp.p1.objects;
 
 public abstract class GameObject {
 	protected int x;
@@ -9,7 +10,6 @@ public abstract class GameObject {
 		this.x = x;
 		this.y = y;
 	
-		
 	}
 
 	public int getX() {

@@ -6,8 +6,8 @@ package tp.p1.controller;
 import java.util.Scanner;
 
 import tp.p1.logic.GamePrinter;
-import tp.p1.plants.Peashooter;
-import tp.p1.plants.Sunflower;
+import tp.p1.objects.Peashooter;
+import tp.p1.objects.Sunflower;
 
 /**
  * @author Michelle

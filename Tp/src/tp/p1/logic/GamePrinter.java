@@ -7,9 +7,9 @@ import tp.p1.controller.Game;
 import tp.p1.lists.PeashooterList;
 import tp.p1.lists.SunflowerList;
 import tp.p1.lists.ZombieList;
+import tp.p1.objects.Peashooter;
+import tp.p1.objects.Sunflower;
 import tp.p1.objects.Zombie;
-import tp.p1.plants.Peashooter;
-import tp.p1.plants.Sunflower;
 
 /**
  * @author Michelle

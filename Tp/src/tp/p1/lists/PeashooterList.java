@@ -3,7 +3,7 @@
  */
 package tp.p1.lists;
 
-import tp.p1.plants.Peashooter;
+import tp.p1.objects.Peashooter;
 
 /**
  * @author Michelle
