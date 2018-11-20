@@ -19,10 +19,13 @@ public class CommandParser {
 	public static Command parseCommand(String[ ] commandWords, Controller controller) {
 		if (commandWords.length > 0) {
 			int i = 0;
-			do {
+			boolean noCommand= true;
+			while(i < availableCommands.length && noCommand) {
 				c = availableCommands[i].parse(commandWords, controller);
+				if(c != null) 
+					noCommand = false;
 				i++;
-			} while ((i < availableCommands.length) && (c == null));
+			}
 			
 			return c;
 

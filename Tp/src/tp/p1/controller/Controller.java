@@ -5,6 +5,8 @@ package tp.p1.controller;
 
 import java.util.Scanner;
 
+import tp.p1.command.Command;
+import tp.p1.command.CommandParser;
 import tp.p1.logic.GamePrinter;
 import tp.p1.objects.Peashooter;
 import tp.p1.objects.Sunflower;
@@ -16,6 +18,7 @@ import tp.p1.objects.Sunflower;
 public class Controller {
 	private Game game;
 	private Scanner in = new Scanner (System.in); 
+	private boolean noPrint = true;
 
 	/**
 	 * 
@@ -24,6 +27,40 @@ public class Controller {
 		this.game = game;
 		this.in = in;
 	}
+	
+	
+	public void run() {
+		while (!game.isFinished() /*&& !exit*/) {
+			printGame();
+			this.noPrint = false;
+			System.out.print(/*prompt*/"");
+			String[] words =  in.nextLine().toLowerCase().trim().split("\\s+");
+			Command command = CommandParser.parseCommand(words, this);
+			if (command != null) {
+				command.execute(game, this);
+			}
+			else {
+				System.err.println ("Unknown command");
+				setNoPrintGameState();
+			}
+		}
+
+	}
+	
+	private void setNoPrintGameState() {
+		this.noPrint = true;
+		
+	}
+
+
+	private void printGame() {
+		System.out.println(game.toString());
+		
+	}
+
+
+	/*
+	 * run practica 1
 	
 	public void run() {
 		String linea = null;
@@ -117,6 +154,5 @@ public class Controller {
 			return false;
 		}
 	}
-	//setNoPrintGameState()
-
+*/
 }
