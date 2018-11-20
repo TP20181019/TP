@@ -5,9 +5,13 @@ import tp.p1.controller.Game;
 
 public class PrintModeCommand extends Command{
 	private String mode;
-	
-	
+
+	public PrintModeCommand(String commandText, String commandTextMsg, String helpTextMsg) {
+		super(commandText, commandTextMsg, helpTextMsg);
+		// TODO Auto-generated constructor stub
+	}
 	public PrintModeCommand (String mode) {
+		super("", "", "");
 		this.mode = mode;
 	}
 	@Override
@@ -20,4 +24,5 @@ public class PrintModeCommand extends Command{
 		// TODO Auto-generated method stub
 		return null;
 	}
+}
 	
