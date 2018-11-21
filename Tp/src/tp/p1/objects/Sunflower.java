@@ -10,6 +10,8 @@ public class Sunflower extends Plants{
 		super(x, y);
 		setPlantName("S");
 		setCost(20);
+		setHarm(0);
+		setLife(1);
 	}
 	
 

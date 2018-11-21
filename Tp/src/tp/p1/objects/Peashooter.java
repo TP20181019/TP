@@ -9,6 +9,7 @@ public class Peashooter extends Plants{
 		setPlantName("P");
 		setCost(50);
 		setHarm(1);
+		setLife(3);
 		
 	}
 
