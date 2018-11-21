@@ -4,7 +4,7 @@ public class CommonZombie extends Zombie{
 	//private String zombieName;
 	
 	public CommonZombie(int x, int y, String zombieName) {
-		super(x,y, zombieName);
+		super(x,y);
 		this.setZombieName("Common");
 	}
 /*

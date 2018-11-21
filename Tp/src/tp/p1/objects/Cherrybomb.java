@@ -8,6 +8,7 @@ public class Cherrybomb extends Plants {
 		setCost(50);
 		setHarm(10);
 		setLife(2);
+		
 	}
 
 }

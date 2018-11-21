@@ -7,17 +7,16 @@ public class ZombieFactory {
 	public ZombieFactory() {
 		
 	}
-	private static Zombie [] availableZombie = {
 			
-			new CommonZombie();
+			//new CommonZombie();
 			//new BucketheadZombie();
 			//new SportyZombie();
 	
-	public static Zombie getZombie (String zombieName) {
+	//public static Zombie getZombie (String zombieName) {
 		Zombie Z;
 		//this.zombieName = getZombieName(zombieName);
 		
-		return Z;
+		//return Z;
 		
 	}
 	

@@ -10,38 +10,41 @@ public class PlantFactory {
 	public PlantFactory() {
 		// TODO Auto-generated constructor stub
 	}
-	public Plants createPlant ( String namePlant ) {
+	public Plants createPlant ( String plantName ) {
 		
-		switch (namePlant) {
-		//case P: return new Peashooter(1, 2);break;
-		//case S: return new Sunflower(1, 2);break;
-		//case C: return new PetaCereza();break;
-		//case N: return new Nuez();break;
+		switch (plantName) {
+		case P: return new Peashooter(0, 0);break;
+		case S: return new Sunflower(0, 0);break;
+		case C: return new Cherrybomb(0, 0);break;
+		case N: return new Wallnut(0, 0);break;
 		default: return null;
 		}
-		return null;
 		
 	}
 	
 	private static Plants[] availablePlants = {
 			
-			new Sunflower();
-			new Peashooter();
-			//new PetaCereza();
-			//new Nuez();
+			//new Sunflower();
+			//new Peashooter();
+			//new Cherrybomb();
+			//new Wallnut();
 	};
 	
 	public static Plants getPlant(String plantName){
+		return null;
 			// sera usado por el comando addPlant 
 			}
 	public static String infoAvailablePlants(){
+		return null;
 		
 	
 	}
 	public static String listOfAvilablePlants() {
+		return null;
 			//lista de plantas disponibles que se puede preguntar
 			//este metodo sera usado por el comando listComand
-			}*/
+			}//*/
+	public static Plants[] getAvailablePlants() {
 	
 	
 }

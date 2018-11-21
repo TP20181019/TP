@@ -12,6 +12,7 @@ public abstract class Zombie extends GameObject{
 		setHarm(1);
 	}
 	
+	
 	public void update() {
 		
 	}

@@ -11,6 +11,7 @@ public class Peashooter extends Plants{
 		setHarm(1);
 		setLife(3);
 		
+		
 	}
 
 

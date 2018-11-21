@@ -8,6 +8,7 @@ public class Wallnut extends Plants {
 		setCost(50);
 		setHarm(0);
 		setLife(10);
+		
 	}
 
 }
