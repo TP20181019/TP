@@ -15,6 +15,8 @@ public abstract class BoardPrinter implements GamePrinter {
 		
 	}
 	
+	
+	
 	public String toString() {
 
 		int cellSize = 7;
