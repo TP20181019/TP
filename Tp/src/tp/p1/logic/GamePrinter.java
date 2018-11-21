@@ -16,7 +16,7 @@ import tp.p1.objects.Zombie;
  *
  */
 public interface GamePrinter {
-
+/*
 	private final int dimX; 
 	private final int dimY;
 	private String[][] board;
@@ -76,5 +76,5 @@ public interface GamePrinter {
 		}
 		return str.toString();
 	}
-
+*/
 }
