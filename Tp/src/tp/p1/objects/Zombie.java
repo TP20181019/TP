@@ -7,15 +7,13 @@ package tp.p1.objects;
  * @author Michelle
  *
  */
-public abstract class Zombie {
+public abstract class Zombie extends GameObject{
 	private int x;
 	private int y;
-	/**
-	 * 
-	 */
+	
+	
 	public Zombie(int x, int y) {
-		this.x = x;
-		this.y = y;
+		super (x,y);
 		
 	}
 	public int getX() {
@@ -32,5 +30,11 @@ public abstract class Zombie {
 	}
 	public void update() {
 		
+	}
+public String getZombieName() {
+		return zombieName;
+	}
+	public void setZombieName(String zombieName) {
+		this.zombieName = zombieName;
 	}
 }

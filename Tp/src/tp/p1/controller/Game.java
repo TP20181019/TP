@@ -58,7 +58,7 @@ public class Game {
 		this.setCycleCount(count);
 		for(int i = 0; i < this.sunflowerList.getStack(); i++) {
 			Sunflower sf = this.sunflowerList.sf(i);
-			//añado soles;
+			//anado soles;
 			this.suncoins.sumaSuncoins(sf);
 		}
 		for (int i = 0; i < this.peashooterList.getStack(); i++) {

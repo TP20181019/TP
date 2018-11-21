@@ -3,12 +3,14 @@ package tp.p1.objects;
 public abstract class GameObject {
 	protected int x;
 	protected int y;
+	private int cycle;
 	
 	public GameObject (int x, int y) {
 		// TODO Auto-generated constructor stub
 		
 		this.x = x;
 		this.y = y;
+		this.setCycle(1);
 	
 	}
 
@@ -31,6 +33,14 @@ public abstract class GameObject {
 	public String getInfo() {
 		return null;
 		
+	}
+
+	public int getCycle() {
+		return cycle;
+	}
+
+	public void setCycle(int cycle) {
+		this.cycle = cycle;
 	}
 
 }
