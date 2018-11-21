@@ -3,7 +3,6 @@ package tp.p1.objects;
 
 public class Peashooter extends Plants{
 	
-	private int harm;
 	
 	public Peashooter (int x, int y) {
 		super (x,y);

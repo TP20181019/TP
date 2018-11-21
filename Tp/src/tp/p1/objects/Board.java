@@ -1,7 +1,4 @@
-package tp.p1.board;
-
-import tp.p1.objects.Plants;
-import tp.p1.objects.Zombie;
+package tp.p1.objects;
 
 public class Board {
 	private Plants [] listPlants;

@@ -1,4 +1,4 @@
-package tp.p1.board;
+package tp.p1.logic;
 
 public class BoardPrinter {
 
