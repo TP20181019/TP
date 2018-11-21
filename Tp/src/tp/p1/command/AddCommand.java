@@ -24,7 +24,6 @@ public class AddCommand extends Command{
 		
 	}
 	
-
 	@Override
 	public void execute(Game game, Controller controller) {
 		// TODO Auto-generated method stub
