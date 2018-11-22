@@ -28,10 +28,17 @@ public class PlantFactory {
 	
 	private static Plants[] availablePlants = {
 			
+<<<<<<< HEAD
 			new Sunflower (x, y),
 			new Peashooter(x, y),
 			new Cherrybomb(x, y),
 			new Wallnut(x, y),
+=======
+			new Sunflower(),
+			new Peashooter(),
+			new Cherrybomb(),
+			new Wallnut(),
+>>>>>>> branch 'master' of https://github.com/TP20181019/TP
 	};
 	
 	public static Plants getPlant(String plantName){

@@ -6,22 +6,27 @@ import tp.p1.controller.Game;
 public class PrintModeCommand extends Command{
 	private String mode;
 
-	public PrintModeCommand(String commandText, String commandTextMsg, String helpTextMsg) {
-		super(commandText, commandTextMsg, helpTextMsg);
-		// TODO Auto-generated constructor stub
+	private static String cmName = "printMode";
+	private static String cmText = "[P]rint <mode>:";
+	private static String cmInfo = " change print mode [Realease|Debug";
+	
+	public PrintModeCommand() {
+		super(cmName, cmText, cmInfo);
 	}
+	
 	public PrintModeCommand (String mode) {
-		super("", "", "");
+		this();
 		this.mode = mode;
 	}
 	@Override
 	public void execute(Game game, Controller controller) {
-		// TODO Auto-generated method stub
+		game.print(this.mode);
 		
 	}
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
-		// TODO Auto-generated method stub
+		if (( commandWords.length==1)&& commandWords[0].equalsIgnoreCase(""))
+			return new ResetCommand();
 		return null;
 	}
 }

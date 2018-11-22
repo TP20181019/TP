@@ -8,12 +8,13 @@ public class AddCommand extends Command{
 	private int x;
 	private int y;
 	private String plantName;
-	private static String text = "[A]dd <plant> <x> <y>:";
-	private static String help = " adds a plant in position x, y.";
+	private static String cmName = "add";
+	private static String cmText = "[A]dd:";
+	private static String cmInfo = " <plant> <x> <y>";
 	
 	
 	public AddCommand() {
-		super("add", text , help );
+		super(cmName, cmText , cmInfo );
 	}
 	public AddCommand(int x, int y, String plantName)
 	{
@@ -30,27 +31,22 @@ public class AddCommand extends Command{
 		game.addPlant();
 		
 	}
-	
-	public String helpText() {
-		 return this.text + this.help;
-	}
-
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
 		Command cm= null;
 		if (( commandWords.length==4)&& ( commandWords[0].equalsIgnoreCase("A")))
 		{
 			if (commandWords[1].equalsIgnoreCase("S")){
-				this.plantName = "sunflower";
+				this.plantName = "S";
 				}
 			else if(commandWords[1].equalsIgnoreCase("P")) {
-				this.plantName = "peashooter";
+				this.plantName = "P";
 			}
 			else if(commandWords[1].equalsIgnoreCase("C")) {
-				this.plantName = "peashooter";
+				this.plantName = "C";
 			}
 			else if(commandWords[1].equalsIgnoreCase("N")) {
-				this.plantName = "peashooter";
+				this.plantName = "N";
 			}
 			this.x = Integer.parseInt(commandWords[2]);
 			this.y = Integer.parseInt(commandWords[3]);
