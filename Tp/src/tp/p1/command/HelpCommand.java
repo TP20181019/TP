@@ -9,19 +9,19 @@ public class HelpCommand extends Command {
 		super(commandText, commandTextMsg,helpTextMsg);
 	}
 	public HelpCommand() {
-		super("", "", "");
+		super("help", "[H]elp:", " print this help message");
 	}
 
 	@Override
 	public void execute(Game game, Controller controller) {
-		game.help();
+		System.out.println("The avaible commands are:" + System.getProperty("line.separator") + CommandParser.commandHelp());
 		
 	}
 
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
 		if ((commandWords.length==1)&& (commandWords[0].equalsIgnoreCase("HELP")))
-			return new HelpCommand("Help", "help","" );
+			return new HelpCommand();
 		else 
 			return null;
 	}

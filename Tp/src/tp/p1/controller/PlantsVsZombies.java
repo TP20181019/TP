@@ -22,7 +22,7 @@ public class PlantsVsZombies {
 		
 		if(max <= 2 && max > 0) {
 			Level level = null;
-			Long seed = null; //long()new Random().nextInt(1000);
+			Long seed = (long) new Random().nextInt(1000);
 			if (args[0].equalsIgnoreCase("EASY")) 
 				level = Level.EASY;
 			else if(args[0].equalsIgnoreCase("HARD"))
@@ -44,7 +44,6 @@ public class PlantsVsZombies {
 			if (ok) {
 
 				Random rand = new Random(seed);
-				// long seed = long.
 				Game game = new Game(rand, level);
 				Controller controller = new Controller(game,in);
 				controller.run();

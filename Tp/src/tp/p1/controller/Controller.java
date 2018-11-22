@@ -19,6 +19,7 @@ public class Controller {
 	private Game game;
 	private Scanner in = new Scanner (System.in); 
 	private boolean noPrint = true;
+	private String prompt = "Command > ";
 
 	/**
 	 * 
@@ -33,7 +34,7 @@ public class Controller {
 		while (!game.isFinished() /*&& !exit*/) {
 			printGame();
 			this.noPrint = false;
-			System.out.print(/*prompt*/"");
+			System.out.print(prompt);
 			String[] words =  in.nextLine().toLowerCase().trim().split("\\s+");
 			Command command = CommandParser.parseCommand(words, this);
 			if (command != null) {

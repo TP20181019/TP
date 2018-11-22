@@ -54,6 +54,8 @@ public class Game {
 		this.end = false;
 	}
 	
+	/*
+	
 	public void update(Integer count) {
 		this.setCycleCount(count);
 		for(int i = 0; i < this.sunflowerList.getStack(); i++) {
@@ -107,7 +109,7 @@ public class Game {
 			Zombie z = new Zombie(x, y, 5);
 			this.addZombie(z);
 		}
-	}
+	}*/
 	
 	public String toString() {
 		String line;
@@ -117,6 +119,16 @@ public class Game {
 		return line;
 		
 	}
+	
+	/**
+	 * Añade una planta desde facotry??
+	 */
+	
+	public void addPlant() {
+		;
+	}
+	
+	/*
 	public void addSunflower(Sunflower sf) {
 		if(this.sunflowerList.existInList(sf.getX(),sf.getY()) == null
 				&& this.suncoins.getSuncoins() >= 20) {
@@ -137,6 +149,7 @@ public class Game {
 				&&this.zombieManager.isZombieAdded())
 			this.zombieList.add(z);
 	}
+	*/
 	
 	public PeashooterList getPeashooterList() {
 		return peashooterList;

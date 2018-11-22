@@ -27,8 +27,12 @@ public class AddCommand extends Command{
 	
 	@Override
 	public void execute(Game game, Controller controller) {
-		// TODO Auto-generated method stub
+		game.addPlant();
 		
+	}
+	
+	public String helpText() {
+		 return this.text + this.help;
 	}
 
 	@Override
@@ -39,7 +43,17 @@ public class AddCommand extends Command{
 			if (commandWords[1].equalsIgnoreCase("S")){
 				this.plantName = "sunflower";
 				}
-			
+			else if(commandWords[1].equalsIgnoreCase("P")) {
+				this.plantName = "peashooter";
+			}
+			else if(commandWords[1].equalsIgnoreCase("C")) {
+				this.plantName = "peashooter";
+			}
+			else if(commandWords[1].equalsIgnoreCase("N")) {
+				this.plantName = "peashooter";
+			}
+			this.x = Integer.parseInt(commandWords[2]);
+			this.y = Integer.parseInt(commandWords[3]);
 		}
 		return cm;
 	}
