@@ -24,10 +24,10 @@ public class PlantFactory {
 	
 	private static Plants[] availablePlants = {
 			
-			//new Sunflower();
-			//new Peashooter();
-			//new Cherrybomb();
-			//new Wallnut();
+			new Sunflower(),
+			new Peashooter(),
+			new Cherrybomb(),
+			new Wallnut(),
 	};
 	
 	public static Plants getPlant(String plantName){

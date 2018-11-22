@@ -37,16 +37,16 @@ public class AddCommand extends Command{
 		if (( commandWords.length==4)&& ( commandWords[0].equalsIgnoreCase("A")))
 		{
 			if (commandWords[1].equalsIgnoreCase("S")){
-				this.plantName = "sunflower";
+				this.plantName = "S";
 				}
 			else if(commandWords[1].equalsIgnoreCase("P")) {
-				this.plantName = "peashooter";
+				this.plantName = "P";
 			}
 			else if(commandWords[1].equalsIgnoreCase("C")) {
-				this.plantName = "peashooter";
+				this.plantName = "C";
 			}
 			else if(commandWords[1].equalsIgnoreCase("N")) {
-				this.plantName = "peashooter";
+				this.plantName = "N";
 			}
 			this.x = Integer.parseInt(commandWords[2]);
 			this.y = Integer.parseInt(commandWords[3]);
