@@ -19,10 +19,15 @@ public class ListCommand extends Command {
 		
 	}
 
+	public String helpText() {
+		return "[L]ist: print the list of available plants.";
+	}
+	
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
-		// TODO Auto-generated method stub
-		return null;
+		if (( commandWords.length==1)&& ( commandWords[0].equalsIgnoreCase("L") || commandWords[0].equalsIgnoreCase("LIST")))
+			return new ListCommand();
+		else return null;
 	}
 
 }

@@ -8,12 +8,13 @@ public class AddCommand extends Command{
 	private int x;
 	private int y;
 	private String plantName;
-	private static String text = "[A]dd <plant> <x> <y>:";
-	private static String help = " adds a plant in position x, y.";
+	private static String cmName = "add";
+	private static String cmText = "[A]dd:";
+	private static String cmInfo = " <plant> <x> <y>";
 	
 	
 	public AddCommand() {
-		super("add", text , help );
+		super(cmName, cmText , cmInfo );
 	}
 	public AddCommand(int x, int y, String plantName)
 	{
@@ -32,7 +33,7 @@ public class AddCommand extends Command{
 	}
 	
 	public String helpText() {
-		 return this.text + this.help;
+		 return cmText + cmInfo;
 	}
 
 	@Override

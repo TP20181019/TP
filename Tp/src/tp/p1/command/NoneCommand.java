@@ -5,18 +5,16 @@ import tp.p1.controller.Game;
 
 public class NoneCommand extends Command{
 
-	public NoneCommand(String commandText, String commandTextMsg, String helpTextMsg) {
-		super(commandText, commandTextMsg, helpTextMsg);
-		// TODO Auto-generated constructor stub
-	}
+	private static String cmName = "none";
+	private static String cmText = "none:";
+	private static String cmInfo = " skips cycle";
 	
 	public NoneCommand() {
-		super("", "", "");
-		}
-
+		super(cmName, cmText, cmInfo); 
+	}
 	@Override
 	public void execute(Game game, Controller controller) {
-		// TODO Auto-generated method stub
+		game.update(game.getCycleCount() + 1);
 		
 	}
 

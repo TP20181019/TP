@@ -5,11 +5,12 @@ import tp.p1.controller.Game;
 
 public class HelpCommand extends Command {
 
-	public HelpCommand(String commandText, String commandTextMsg, String helpTextMsg) {
-		super(commandText, commandTextMsg,helpTextMsg);
-	}
+	private static String cmName = "help";
+	private static String cmText = "[H]elp:";
+	private static String cmInfo = "  print this help message";
+	
 	public HelpCommand() {
-		super("help", "[H]elp:", " print this help message");
+		super(cmName, cmText, cmInfo);
 	}
 
 	@Override
@@ -20,7 +21,7 @@ public class HelpCommand extends Command {
 
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
-		if ((commandWords.length==1)&& (commandWords[0].equalsIgnoreCase("HELP")))
+		if ((commandWords.length==1)&& (commandWords[0].equalsIgnoreCase("H") || commandWords[0].equalsIgnoreCase(cmName)))
 			return new HelpCommand();
 		else 
 			return null;

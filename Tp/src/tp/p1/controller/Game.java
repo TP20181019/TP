@@ -54,7 +54,7 @@ public class Game {
 		this.end = false;
 	}
 	
-	/*
+	
 	
 	public void update(Integer count) {
 		this.setCycleCount(count);
@@ -106,10 +106,10 @@ public class Game {
 				
 			int x = rand.nextInt(4);
 			int y = 7;
-			Zombie z = new Zombie(x, y, 5);
-			this.addZombie(z);
+			//Zombie z = new Zombie(x, y, 5);
+			//this.addZombie(z);
 		}
-	}*/
+	}
 	
 	public String toString() {
 		String line;
@@ -220,6 +220,17 @@ public void setEnd(boolean end) {
 				"Exit: Terminates the program." + System.lineSeparator() +
 				"[none]: Skips cycle." + System.lineSeparator());
 	}
+
+	public void reset() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void print(String mode) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }
