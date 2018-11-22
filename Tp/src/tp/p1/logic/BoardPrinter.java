@@ -1,5 +1,7 @@
 package tp.p1.logic;
 
+import tp.p1.controller.Game;
+
 public abstract class BoardPrinter implements GamePrinter {
 	
 	private static int dimX; 
@@ -14,39 +16,12 @@ public abstract class BoardPrinter implements GamePrinter {
 		BoardPrinter.space = space;
 		
 	}
-	
-	
-	
-	
-	
-	public String toString() {
 
-		int cellSize = 7;
-		int marginSize = 2;
-		String vDelimiter = "|";
-		String hDelimiter = "-";
-		
-		String rowDelimiter = MyStringUtils.repeat(hDelimiter, (dimY * (cellSize + 1)) - 1);
-		String margin = MyStringUtils.repeat(space, marginSize);
-		String lineDelimiter = String.format("%n%s%s%n", margin + space, rowDelimiter);
-		
-		StringBuilder str = new StringBuilder();
-		
-		str.append(lineDelimiter);
-		
-		for(int i=0; i<dimX; i++) {
-				str.append(margin).append(vDelimiter);
-				for (int j=0; j<dimY; j++) {
-					str.append( MyStringUtils.centre(board[i][j], cellSize)).append(vDelimiter);
-				}
-				str.append(lineDelimiter);
-		}
-		return str.toString();
+	public void encodeGame(Game game) {
 	}
+	
 	public int getDimX() {
 		return dimX;
-	}
-
 	}
 	public int getDimY() {
 		return dimY;

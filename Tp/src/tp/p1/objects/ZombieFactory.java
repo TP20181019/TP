@@ -11,14 +11,7 @@ public class ZombieFactory {
 			//new CommonZombie();
 			//new BucketheadZombie();
 			//new SportyZombie();
-	
-	//public static Zombie getZombie (String zombieName) {
-		Zombie Z;
-		//this.zombieName = getZombieName(zombieName);
-		
-		//return Z;
-		
-	}
+
 	
 	public Zombie getZombie() {
 		return null;
@@ -29,6 +22,14 @@ public class ZombieFactory {
 		return null;
 		
 		
+	}
+
+	public Zombie getAvilableZombies() {
+		return avilableZombies;
+	}
+
+	public void setAvilableZombies(Zombie avilableZombies) {
+		this.avilableZombies = avilableZombies;
 	}
 
 }

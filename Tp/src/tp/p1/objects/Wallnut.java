@@ -10,5 +10,8 @@ public class Wallnut extends Plants {
 		setLife(10);
 		
 	}
-
+	public void mostrar () {
+		String nut = new String ("N["+ getLife() +"]");
+				
+	}
 }

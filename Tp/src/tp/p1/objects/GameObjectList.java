@@ -33,6 +33,9 @@ public class GameObjectList {
 		this.stack = this.stack + 1;
 		
 	}
+	public GameObject [] getListGameObject () {
+		return getListGameObject();
+	}
 	
 	
 }

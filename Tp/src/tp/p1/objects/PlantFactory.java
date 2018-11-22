@@ -2,10 +2,10 @@ package tp.p1.objects;
 
 public class PlantFactory {
 	
-	public final static String P;
-	public final static String S;
-	public final static String C;
-	public final static String N;
+	public final static String P = "Peashooter";
+	public final static String S = "Sunflower";
+	public final static String C = "Cherrybomb";
+	public final static String N = "Wallnut";
 	
 	public PlantFactory() {
 		// TODO Auto-generated constructor stub
@@ -13,10 +13,10 @@ public class PlantFactory {
 	public Plants createPlant ( String plantName ) {
 		
 		switch (plantName) {
-		case P: return new Peashooter(0, 0);break;
-		case S: return new Sunflower(0, 0);break;
-		case C: return new Cherrybomb(0, 0);break;
-		case N: return new Wallnut(0, 0);break;
+		case P: return new Peashooter(0, 0);
+		case S: return new Sunflower(0, 0);
+		case C: return new Cherrybomb(0, 0);
+		case N: return new Wallnut(0, 0);
 		default: return null;
 		}
 		
@@ -45,6 +45,9 @@ public class PlantFactory {
 			//este metodo sera usado por el comando listComand
 			}//*/
 	public static Plants[] getAvailablePlants() {
-	
+		return availablePlants;
+		
+	}
 	
 }
+	

@@ -5,7 +5,7 @@ public abstract class Plants extends GameObject{
 	private int cost;
 	private String plantName;
 	private int harm;
-	private int life;
+	private static int life;
 	
 	
 	public Plants(int x, int y) {
@@ -37,12 +37,12 @@ public abstract class Plants extends GameObject{
 		return harm;
 	}
 
-	public int getLife() {
+	public static int getLife() {
 		return life;
 	}
 
 	public void setLife(int life) {
-		this.life = life;
+		Plants.life = life;
 	}
 
 	

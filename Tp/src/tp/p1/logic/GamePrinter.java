@@ -4,18 +4,15 @@
 package tp.p1.logic;
 
 import tp.p1.controller.Game;
-import tp.p1.lists.PeashooterList;
-import tp.p1.lists.SunflowerList;
-import tp.p1.lists.ZombieList;
-import tp.p1.objects.Peashooter;
-import tp.p1.objects.Sunflower;
-import tp.p1.objects.Zombie;
 
 /**
  * @author Michelle
  *
  */
 public interface GamePrinter {
+	
+	public void printGame (Game game);
+	
 /*
 	private final int dimX; 
 	private final int dimY;
