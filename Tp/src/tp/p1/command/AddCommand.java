@@ -31,11 +31,6 @@ public class AddCommand extends Command{
 		game.addPlant();
 		
 	}
-	
-	public String helpText() {
-		 return cmText + cmInfo;
-	}
-
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
 		Command cm= null;

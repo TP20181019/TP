@@ -9,7 +9,7 @@ public class ResetCommand extends Command {
 	private static String cmInfo = "  resets game";
 
 	public ResetCommand() {
-		super("reset", "", "");
+		super(cmName, cmText, cmInfo);
 	}
 
 	@Override
@@ -18,10 +18,6 @@ public class ResetCommand extends Command {
 		
 	}
 	
-	public String helpText() {
-		return cmText + cmInfo;
-	}
-
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
 		if (( commandWords.length==1)&& ( commandWords[0].equalsIgnoreCase("R") || commandWords[0].equalsIgnoreCase(cmName)))

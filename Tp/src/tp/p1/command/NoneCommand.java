@@ -17,7 +17,6 @@ public class NoneCommand extends Command{
 		game.update(game.getCycleCount() + 1);
 		
 	}
-
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
 		// TODO Auto-generated method stub

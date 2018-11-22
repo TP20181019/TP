@@ -9,8 +9,13 @@ public class PrintModeCommand extends Command{
 	private static String cmName = "printMode";
 	private static String cmText = "[P]rint <mode>:";
 	private static String cmInfo = " change print mode [Realease|Debug";
-	public PrintModeCommand (String mode) {
+	
+	public PrintModeCommand() {
 		super(cmName, cmText, cmInfo);
+	}
+	
+	public PrintModeCommand (String mode) {
+		this();
 		this.mode = mode;
 	}
 	@Override

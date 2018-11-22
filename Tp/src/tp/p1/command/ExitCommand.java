@@ -16,6 +16,7 @@ public class ExitCommand extends Command{
 	public void execute(Game game, Controller controller) {
 		game.setEnd(true);
 	}
+	
 
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
