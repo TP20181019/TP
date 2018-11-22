@@ -13,16 +13,17 @@ public class ReleasePrinter extends BoardPrinter {
 		
 		printGame(game);
 	}
-	public void encodeGame(Game game, String name) {
+	@Override
+	
+	public void encodeGame(Game game) {
 		Plants plant = null;
 		GameObjectList Go = null;
 		String[][] board = new String[getDimX()][getDimY()];
 		for(int i = 0; i < getDimX(); i++) {
 			for(int j = 0; j < getDimY(); j++) {
-				name =  plant.getPlantName(); 
 				GameObject object = Go.existInList(i, j);
 				if (object != null)
-					board[i][j] = name + "[" + Plants.getLife() + "]";
+					board[i][j] = plant.getPlantName() + "[" + Plants.getLife() + "]";
 				else {board[i][j] = getSpace();
 				/*	Sunflower sf = game.getSunflowerList().existInList(i, j);
 					if (sf != null)
@@ -46,18 +47,18 @@ public class ReleasePrinter extends BoardPrinter {
 		String vDelimiter = "|";
 		String hDelimiter = "-";
 		
-		String rowDelimiter = MyStringUtils.repeat(hDelimiter, (dimY * (cellSize + 1)) - 1);
-		String margin = MyStringUtils.repeat(space, marginSize);
-		String lineDelimiter = String.format("%n%s%s%n", margin + space, rowDelimiter);
+		String rowDelimiter = MyStringUtils.repeat(hDelimiter, (getDimY() * (cellSize + 1)) - 1);
+		String margin = MyStringUtils.repeat(getSpace(), marginSize);
+		String lineDelimiter = String.format("%n%s%s%n", margin + getSpace(), rowDelimiter);
 		
 		StringBuilder str = new StringBuilder();
 		
 		str.append(lineDelimiter);
 		
-		for(int i=0; i<dimX; i++) {
+		for(int i=0; i<getDimX(); i++) {
 				str.append(margin).append(vDelimiter);
-				for (int j=0; j<dimY; j++) {
-					str.append( MyStringUtils.centre(board[i][j], cellSize)).append(vDelimiter);
+				for (int j=0; j<getDimY(); j++) {
+					str.append( MyStringUtils.centre(getBoard()[i][j], cellSize)).append(vDelimiter);
 				}
 				str.append(lineDelimiter);
 		}
@@ -68,5 +69,9 @@ public class ReleasePrinter extends BoardPrinter {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+
+
 
 }

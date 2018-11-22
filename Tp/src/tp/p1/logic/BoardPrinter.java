@@ -17,8 +17,7 @@ public abstract class BoardPrinter implements GamePrinter {
 		
 	}
 
-	public void encodeGame(Game game) {
-	}
+	public abstract void encodeGame(Game game);
 	
 	public int getDimX() {
 		return dimX;
@@ -33,5 +32,8 @@ public abstract class BoardPrinter implements GamePrinter {
 	public String getSpace() {
 		return space;
 	}
-
+	public static String boardToString (int cellSize) {
+		return null;
+		
+	}
 }

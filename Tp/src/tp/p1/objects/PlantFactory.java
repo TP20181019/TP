@@ -6,17 +6,21 @@ public class PlantFactory {
 	public final static String S = "Sunflower";
 	public final static String C = "Cherrybomb";
 	public final static String N = "Wallnut";
+	private static int x;
+	private static int y;
 	
 	public PlantFactory() {
 		// TODO Auto-generated constructor stub
 	}
 	public Plants createPlant ( String plantName ) {
-		
+		Plants plant = null;
+		x = plant.getX();
+		y = plant.getY();
 		switch (plantName) {
-		case P: return new Peashooter(0, 0);
-		case S: return new Sunflower(0, 0);
-		case C: return new Cherrybomb(0, 0);
-		case N: return new Wallnut(0, 0);
+		case P: return new Peashooter(x, y);
+		case S: return new Sunflower(x,y);
+		case C: return new Cherrybomb(x,y);
+		case N: return new Wallnut(x,y);
 		default: return null;
 		}
 		
@@ -24,10 +28,10 @@ public class PlantFactory {
 	
 	private static Plants[] availablePlants = {
 			
-			//new Sunflower();
-			//new Peashooter();
-			//new Cherrybomb();
-			//new Wallnut();
+			new Sunflower (x, y),
+			new Peashooter(x, y),
+			new Cherrybomb(x, y),
+			new Wallnut(x, y),
 	};
 	
 	public static Plants getPlant(String plantName){

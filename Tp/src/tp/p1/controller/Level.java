@@ -3,9 +3,7 @@
  */
 package tp.p1.controller;
 
- * @author Michelle
- *
- */
+ 
 public enum Level {
 	EASY , HARD, INSANE;
 	/*
