@@ -3,13 +3,16 @@ package tp.p1.objects;
 public abstract class GameObject {
 	protected int x;
 	protected int y;
+	protected int vida;
+	
+
 	private int cycle;
 	
-	public GameObject (int x, int y) {
-		// TODO Auto-generated constructor stub
+	public GameObject (int x, int y, int vida) {
 		
 		this.x = x;
 		this.y = y;
+		this.vida = vida;
 		this.setCycle(1);
 	
 	}
@@ -28,11 +31,19 @@ public abstract class GameObject {
 	}
 
 	public void update() {
-		
+		this.cycle++;
 	}
 	public String getInfo() {
-		return null;
 		
+		return "x:" + this.x + ",y:" + this.y + ",t:" + this.cycle;
+		
+	}
+	public int getVida() {
+		return vida;
+	}
+
+	public void setVida(int vida) {
+		this.vida = vida;
 	}
 
 	public int getCycle() {

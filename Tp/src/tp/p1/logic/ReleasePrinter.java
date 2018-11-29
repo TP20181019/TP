@@ -23,19 +23,9 @@ public class ReleasePrinter extends BoardPrinter {
 			for(int j = 0; j < getDimY(); j++) {
 				GameObject object = Go.existInList(i, j);
 				if (object != null)
-					board[i][j] = plant.getPlantName() + "[" + Plants.getLife() + "]";
+					board[i][j] = plant.getPlantName() + "[" + Plants.this.getLife() + "]";
 				else {board[i][j] = getSpace();
-				/*	Sunflower sf = game.getSunflowerList().existInList(i, j);
-					if (sf != null)
-						board[i][j] = "S[" + sf.getVida() + "]";
-					else {
-						Zombie z = game.getZombieList().existInList(i, j);
-						if (z!= null)
-							board[i][j] = "Z[" + z.getVida() + "]";*/
-						//else 
-							
-					}
-				//}
+				}
 			}
 		}
 	}

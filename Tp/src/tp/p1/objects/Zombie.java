@@ -5,11 +5,14 @@ public abstract class Zombie extends GameObject{
 	
 	private int harm;
 	private String zombieName;
-	private int life;
+	//private int life;
 	
-	public Zombie(int x, int y) {
-		super (x,y);
+	public Zombie(int x, int y, int vida) {
+		super (x,y, vida);
 		setHarm(1);
+	}
+	public Zombie() {
+		super(-1, -1, 0);
 	}
 	
 	
@@ -27,11 +30,5 @@ public abstract class Zombie extends GameObject{
 	}
 	public void setHarm(int harm) {
 		this.harm = harm;
-	}
-	public int getLife() {
-		return life;
-	}
-	public void setLife(int life) {
-		this.life = life;
 	}
 }

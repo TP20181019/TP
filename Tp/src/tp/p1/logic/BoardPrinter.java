@@ -4,36 +4,16 @@ import tp.p1.controller.Game;
 
 public abstract class BoardPrinter implements GamePrinter {
 	
-	private static int dimX; 
-	private static int dimY;
-	private String[][] board;
+	protected String[] board;
 	private static String space = " ";
 	
-	public BoardPrinter (int dimX, int dimY, String[][] board, String space) {
-		BoardPrinter.dimX = dimX;
-		BoardPrinter.dimY = dimY;
+	public BoardPrinter (String[] board, String space) {
 		this.board = board;
 		BoardPrinter.space = space;
 		
 	}
-
 	public abstract void encodeGame(Game game);
-	
-	public int getDimX() {
-		return dimX;
-	}
-	public int getDimY() {
-		return dimY;
-	}
-	
-	public String [][] getBoard() {
-		return board;
-	}
-	public String getSpace() {
-		return space;
-	}
 	public static String boardToString (int cellSize) {
 		return null;
-		
 	}
 }

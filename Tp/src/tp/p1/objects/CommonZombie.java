@@ -3,8 +3,8 @@ package tp.p1.objects;
 public class CommonZombie extends Zombie{
 	//private String zombieName;
 	
-	public CommonZombie(int x, int y, String zombieName) {
-		super(x,y);
+	public CommonZombie(int x, int y, int vida, String zombieName) {
+		super(x,y, vida);
 		this.setZombieName("Common");
 	}
 /*

@@ -5,12 +5,11 @@ public abstract class Plants extends GameObject{
 	private int cost;
 	private String plantName;
 	private int harm;
-	private static int life;
+	//private static int life;
 	
 	
-	public Plants(int x, int y) {
-		super(x, y);
-		// TODO Auto-generated constructor stub
+	public Plants(int x, int y, int vida) {
+		super(x, y, vida);
 	}
 
 	public int getCost() {
@@ -36,20 +35,9 @@ public abstract class Plants extends GameObject{
 	public int getHarm() {
 		return harm;
 	}
-
-	public static int getLife() {
-		return life;
+	
+	public int getLife() {
+		return 0;
 	}
-
-	public void setLife(int life) {
-		Plants.life = life;
-	}
-
-	
-	
-	
-	
-
-	
 }
 
