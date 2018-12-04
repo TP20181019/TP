@@ -58,7 +58,7 @@ public class ReleasePrinter extends BoardPrinter {
 	}
 	@Override
 	public void printGame(Game game) {
-		// TODO Auto-generated method stub
+		this.toString();
 		
 	}
 
