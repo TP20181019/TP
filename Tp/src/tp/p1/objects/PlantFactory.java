@@ -16,9 +16,6 @@ public class PlantFactory {
 		// TODO Auto-generated constructor stub
 	}
 	public Plants createPlant ( String plantName ) {
-		Plants plant = null;
-		x = plant.getX();
-		y = plant.getY();
 		switch (plantName) {
 		case P: return new Peashooter(x, y);
 		case S: return new Sunflower(x,y);

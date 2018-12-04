@@ -38,7 +38,7 @@ public abstract class GameObject {
 		return "x:" + this.x + ",y:" + this.y + ",t:" + this.cycle;
 		
 	}
-	public int getVida() {
+	public int getLife() {
 		return vida;
 	}
 

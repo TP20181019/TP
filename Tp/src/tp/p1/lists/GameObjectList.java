@@ -41,7 +41,7 @@ public class GameObjectList {
 	}
 	
 	public void add (GameObject p) {
-		// aumenta el tamaño si llega al tope de la lista
+		// aumenta el tamaï¿½o si llega al tope de la lista
 				if(this.stack == this.tam - 1) {
 					this.tam = this.tam*2;
 				}
@@ -60,8 +60,8 @@ public class GameObjectList {
 			if(this.list[i].getX() == x
 					&& this.list[i].getY() == y) {
 				encuentra = true;
-				this.list[i].setVida(this.list[i].getVida() - 1);
-				if(this.list[i].getVida() == 0) {
+				this.list[i].setVida(this.list[i].getLife() - 1);
+				if(this.list[i].getLife() == 0) {
 					for(int j = i; j < this.stack; j++ )
 						this.list[j] = this.list[j + 1];
 					this.setStack(this.getStack() - 1);

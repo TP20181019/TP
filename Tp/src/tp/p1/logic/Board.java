@@ -1,6 +1,7 @@
-package tp.p1.objects;
+package tp.p1.logic;
 
 import tp.p1.lists.GameObjectList;
+import tp.p1.objects.GameObject;
 
 public class Board {
 	private GameObjectList listPlants;

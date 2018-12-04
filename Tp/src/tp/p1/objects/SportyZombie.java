@@ -6,5 +6,9 @@ public class SportyZombie extends Zombie{
 		super(x, y, 2, "SZ");
 		
 	}
+	
+	public String  toString () {
+		return  new String ("SZ["+ getLife() +"]");	
+	}
 
 }

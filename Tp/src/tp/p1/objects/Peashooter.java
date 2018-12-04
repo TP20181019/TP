@@ -13,11 +13,11 @@ public class Peashooter extends Plants{
 	public Peashooter() {
 		super(-1, -1, 0, "P");
 	}
-
-
 	public boolean aparecer (){
-		return false;
-		
-		
+		return false;		
+	}
+	
+	public String  toString () {
+		return  new String ("P["+ getLife() +"]");	
 	}
 }

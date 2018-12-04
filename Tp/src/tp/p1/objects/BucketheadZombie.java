@@ -6,4 +6,7 @@ public class BucketheadZombie extends Zombie {
 		super(x, y, 8, "BZ");
 	}
 
+	public String  toString () {
+		return  new String ("BZ["+ getLife() +"]");	
+	}
 }

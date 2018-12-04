@@ -27,7 +27,7 @@ public abstract class Plants extends GameObject{
 	}
 	
 	public int getLife() {
-		return 0;
+		return this.getLife();
 	}
 }
 

@@ -13,7 +13,9 @@ public class Sunflower extends Plants{
 	public Sunflower() {
 		super(-1, -1, 0, "S");
 	}
-	
+	public String  toString () {
+		return  new String ("S["+ getLife() +"]");	
+	}
 
 }
 

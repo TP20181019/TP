@@ -12,4 +12,7 @@ public class Cherrybomb extends Plants {
 		super(-1, -1, 0, "C");
 	}
 
+	public String  toString () {
+		return  new String ("C["+ getLife() +"]");	
+	}
 }
