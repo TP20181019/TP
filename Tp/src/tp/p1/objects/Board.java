@@ -1,42 +1,45 @@
 package tp.p1.objects;
 
+import tp.p1.lists.GameObjectList;
+
 public class Board {
-	private Plants [] listPlants;
-	private Zombie [] listZombie;
-	private int tam = 4*8;
-	private int stackP;
-	private int stackZ;
+	private GameObjectList listPlants;
+	private GameObjectList listZombies;
+	
+	
+	public GameObjectList getListPlants() {
+		return listPlants;
+	}
+
+	public void setListPlants(GameObjectList listPlants) {
+		this.listPlants = listPlants;
+	}
+
+	public GameObjectList getListZombies() {
+		return listZombies;
+	}
+
+	public void setListZombies(GameObjectList listZombies) {
+		this.listZombies = listZombies;
+	}
 	
 	public Board() {
 		
-		this.listPlants = new Plants[tam];
-		for (int i=0; i<tam; ++i)
-			listPlants[i] = null;
-		this.setStackP(0);
-		
-		this.listZombie = new Zombie[tam];
-		for (int i=0; i<tam; ++i)
-			listZombie[i] = null;
-		this.setStackZ(0);
+		this.listPlants = new GameObjectList();
+		this.listZombies = new GameObjectList();
 	}
 
-	public int getStackZ() {
-		return stackZ;
-	}
-
-	public void setStackZ(int stackZ) {
-		this.stackZ = stackZ;
-	}
-
-	public int getStackP() {
-		return stackP;
-	}
-
-	public void setStackP(int stackP) {
-		this.stackP = stackP;
+	public void addPlant(GameObject p) {
+		listPlants.add(p);
 	}
 	
-	
-	//lista de plantas y zombies
-	
+	public void addZombie(GameObject z) {
+		listZombies.add(z);
+	}
+	public void deletePlant(GameObject p) {
+		listPlants.delete(p);
+	}
+	public void deleteZombie(GameObject z) {
+		listZombies.delete(z);
+	}
 }

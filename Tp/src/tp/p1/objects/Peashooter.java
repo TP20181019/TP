@@ -5,14 +5,13 @@ public class Peashooter extends Plants{
 	
 	
 	public Peashooter (int x, int y) {
-		super (x,y, 3);
-		setPlantName("P");
+		super (x,y, 3, "P");
 		setCost(50);
 		setHarm(1);		
 	}
 	
 	public Peashooter() {
-		super(-1, -1, 0);
+		super(-1, -1, 0, "P");
 	}
 
 

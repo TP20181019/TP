@@ -5,6 +5,7 @@ package tp.p1.controller;
 
 import java.util.Random;
 
+import tp.p1.lists.GameObjectList;
 import tp.p1.logic.SuncoinManager;
 import tp.p1.logic.ZombieManager;
 import tp.p1.objects.Board;
@@ -116,8 +117,23 @@ public void setEnd(boolean end) {
 	}
 
 	public void print(String mode) {
-		// TODO Auto-generated method stub
+		switch (mode) {
+		case "REALESE":
+			
+			break;
+		case "DEBUG": 
+			break;
+			default: break;
+		}
 		
+	}
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public void setBoard(Board board) {
+		this.board = board;
 	}
 
 	

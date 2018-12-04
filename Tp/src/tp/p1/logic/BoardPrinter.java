@@ -5,15 +5,15 @@ import tp.p1.controller.Game;
 public abstract class BoardPrinter implements GamePrinter {
 	
 	protected String[] board;
-	private static String space = " ";
+	protected static final String space = " ";
 	
-	public BoardPrinter (String[] board, String space) {
+	public BoardPrinter (String[] board) {
 		this.board = board;
-		BoardPrinter.space = space;
 		
 	}
 	public abstract void encodeGame(Game game);
 	public static String boardToString (int cellSize) {
+		
 		return null;
 	}
 }

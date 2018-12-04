@@ -3,13 +3,11 @@ package tp.p1.objects;
 public abstract class Plants extends GameObject{
 	
 	private int cost;
-	private String plantName;
 	private int harm;
-	//private static int life;
 	
 	
-	public Plants(int x, int y, int vida) {
-		super(x, y, vida);
+	public Plants(int x, int y, int vida, String name) {
+		super(x, y, vida, name);
 	}
 
 	public int getCost() {
@@ -18,14 +16,6 @@ public abstract class Plants extends GameObject{
 
 	public void setCost(int cost) {
 		this.cost = cost;
-	}
-
-	public String getPlantName() {
-		return plantName;
-	}
-
-	public void setPlantName(String plantName) {
-		this.plantName = plantName;
 	}
 	
 	public void setHarm (int harm) {

@@ -4,16 +4,16 @@ public abstract class GameObject {
 	protected int x;
 	protected int y;
 	protected int vida;
-	
-
+	protected String name;
 	private int cycle;
 	
-	public GameObject (int x, int y, int vida) {
+	public GameObject (int x, int y, int vida, String name) {
 		
 		this.x = x;
 		this.y = y;
 		this.vida = vida;
 		this.setCycle(1);
+		this.name = name;
 	
 	}
 
@@ -52,6 +52,15 @@ public abstract class GameObject {
 
 	public void setCycle(int cycle) {
 		this.cycle = cycle;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

@@ -77,4 +77,18 @@ public class GameObjectList {
 		
 	}
 
+
+	public void delete(GameObject p) {
+		int i = 0; 
+		boolean encontrado = false;
+		while(i < this.stack && !encontrado) {
+			if(this.list[i] == p) {
+				for(int j = i; j < this.stack - 1; j++) {
+					this.list[j] = this.list[j + 1];
+				}
+				this.stack--;
+			}
+		}
+	}
+
 }
