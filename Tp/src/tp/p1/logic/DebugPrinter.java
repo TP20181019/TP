@@ -1,40 +1,50 @@
 package tp.p1.logic;
 
 import tp.p1.lists.GameObjectList;
-import tp.p1.objects.Plants;
+//import tp.p1.objects.Plants;
+import tp.p1.objects.GameObject;
 
-public class DebugPrinter {
+public class DebugPrinter extends BoardPrinter {
     
+    private GameObject [] list;
     
-    
-    public DebugPrinter(){
+    public DebugPrinter(String []board){
+        super(board);
         
+       
         //imagino que recorrere las listas para obtener los datos de cada
         //objeto
         
         
     }
     
-    public boolean printPlant (){
+    public boolean printPlant (String dName, int dLife, int dX, int dY){
         boolean print = false;
-        GameObjectList listPlants = null;
+        //GameObjectList listPlants = null;
         
         
         //recorrer la lista de objetos para obtener las plantas a mostrar
-        for ( int i  = 0; i< listPlants.getStack(); i++){
+        for ( int i  = 0; i< list.length; i++){
             //ir mostrando cada planta que haya
+        	dName = list[i].getName();
+        	dLife = list [i].getLife();
+        	dX = list [i].getX();
+        	/*...
+        	es una idea. Supongo que crearemos un metodo para saber
+        	el comportamiento de cada objeto y calcular los ciclos que faltan
+        	para que haga su accion cada objeto
         	
-            toStringObject();
-            
+           	toStringObject();
+            */
         }
                 return print;
     }
-    public String toStringObject (){
+    /*public String toStringObject (){
         GameObjectList listPlants = null;
         
         String obcjectPrint = String.format ("|",listPlants.getNamePlant(),"" )   ;   
         return toStringObject();
-    }   
+    }   */
     public void encodeGame (){
             
             

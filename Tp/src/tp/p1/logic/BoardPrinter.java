@@ -4,6 +4,7 @@ import tp.p1.controller.Game;
 
 public abstract class BoardPrinter implements GamePrinter {
 	
+	
 	protected String[] board;
 	protected static final String space = " ";
 	
