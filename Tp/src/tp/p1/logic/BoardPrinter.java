@@ -17,4 +17,9 @@ public abstract class BoardPrinter implements GamePrinter {
 		
 		return null;
 	}
+	@Override
+	public void printGame(Game game) {
+		this.toString();
+		
+	}
 }

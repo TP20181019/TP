@@ -57,11 +57,7 @@ public class ReleasePrinter extends BoardPrinter {
 		return str.toString();
 	}
 	
-	@Override
-	public void printGame(Game game) {
-		this.toString();
-		
-	}
+
 
 	
 
