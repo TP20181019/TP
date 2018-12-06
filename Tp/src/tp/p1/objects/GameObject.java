@@ -3,15 +3,15 @@ package tp.p1.objects;
 public abstract class GameObject {
 	protected int x;
 	protected int y;
-	protected int vida;
+	protected int life;
 	protected String name;
 	private int cycle;
 	
-	public GameObject (int x, int y, int vida, String name) {
+	public GameObject (int x, int y, int life, String name) {
 		
 		this.x = x;
 		this.y = y;
-		this.vida = vida;
+		this.life = life;
 		this.setCycle(1);
 		this.name = name;
 	
@@ -39,11 +39,11 @@ public abstract class GameObject {
 		
 	}
 	public int getLife() {
-		return vida;
+		return life;
 	}
 
 	public void setVida(int vida) {
-		this.vida = vida;
+		this.life = vida;
 	}
 
 	public int getCycle() {
