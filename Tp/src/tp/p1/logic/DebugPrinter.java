@@ -16,7 +16,7 @@ public abstract class DebugPrinter extends BoardPrinter {
     
     public DebugPrinter(String []board, Game game){
         super(board);
-        printGame(game);
+        encodeGame(game);
         //GameObjectList obList = new GameObjectList();
         
         
@@ -63,7 +63,8 @@ public abstract class DebugPrinter extends BoardPrinter {
                                for (int j=0; j<this.sizeBoardX; j++) {
                                /////aqui se pone lo que va dentro del cuadrito. en el array
 					str.append( MyStringUtils.centre(board[i], cellSize)).append(vDelimiter);
-                               
+        //necesito una condicion para pintar uno por uno los objetos. es decir
+					//algo como un ExistList 
 				}
 				str.append(lineDelimiter);  
 		}}

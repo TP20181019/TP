@@ -21,6 +21,8 @@ private void encodeGame() {
 	for(int i = 0; i < dimX; i++) {
 		for(int j = 0; j < dimY; j++) {
                         board [i][j] = "lool";// aqui va lo de dentro del cuadro.
+                        //Debe haber un metodo para que lo pinte directamente? 
+                        //llama al toString?
                         
 			/*Peashooter ps = game.getPeashooterList().existInList(i, j);
 			if (ps != null)

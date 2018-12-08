@@ -62,5 +62,13 @@ public abstract class GameObject {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String toString () {
+		
+		/*String print = this.name + "["+ this.life + ","+ "vidaTotal" + ",x:"+this.x + 
+				",y:" + this.y + ",t:"+this.cycle;*/
+		
+		return toString();
+	}
 
 }
