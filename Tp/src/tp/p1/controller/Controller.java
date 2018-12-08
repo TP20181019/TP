@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import tp.p1.command.Command;
 import tp.p1.command.CommandParser;
+import tp.p1.logic.GamePrinter;
 
 /**
  * @author Michelle
@@ -53,7 +54,6 @@ public class Controller {
 
 
 	private void printGame() {
-		System.out.println(game.toString());
 		
 	}
 }

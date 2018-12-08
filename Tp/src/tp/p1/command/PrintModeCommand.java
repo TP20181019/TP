@@ -2,6 +2,7 @@ package tp.p1.command;
 
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
+import tp.p1.logic.GamePrinter;
 
 public class PrintModeCommand extends Command{
 	private String mode;
@@ -20,7 +21,6 @@ public class PrintModeCommand extends Command{
 	}
 	@Override
 	public void execute(Game game, Controller controller) {
-		game.print(this.mode);
 		
 	}
 	@Override

@@ -17,24 +17,14 @@ public abstract class DebugPrinter extends BoardPrinter {
     public DebugPrinter(String []board, Game game){
         super(board);
         printGame(game);
-        //GameObjectList obList = new GameObjectList();
-        
-        
-        
+        //GameObjectList obList = new GameObjectList();   
     }
 
     
     public void encodeGame (Game game){
-    	
-    	
-    
-    	   
         for ( int i  = 0; i< this.sizeBoardX; i++){
         	//GameObject object;
-        	//board [i] = obj.toString();
-        	 
-        	
-           	
+        	//board [i] = obj.toString(); 	 
             
         }
     }

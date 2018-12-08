@@ -11,5 +11,5 @@ import tp.p1.controller.Game;
  */
 public interface GamePrinter {
 	
-	public void printGame (Game game);
+	public String printGame (Game game);
 }

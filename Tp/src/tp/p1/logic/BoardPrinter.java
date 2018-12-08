@@ -13,13 +13,9 @@ public abstract class BoardPrinter implements GamePrinter {
 		
 	}
 	public abstract void encodeGame(Game game);
+	public abstract String printGame(Game game);
 	public static String boardToString (int cellSize) {
 		
 		return null;
-	}
-	@Override
-	public void printGame(Game game) {
-		this.toString();
-		
 	}
 }

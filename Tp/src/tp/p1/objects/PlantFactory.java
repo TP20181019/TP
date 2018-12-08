@@ -1,7 +1,5 @@
 package tp.p1.objects;
 
-import tp.p1.command.Command;
-import tp.p1.command.CommandParser;
 
 public class PlantFactory {
 	
