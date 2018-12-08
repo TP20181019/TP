@@ -7,6 +7,7 @@ import java.util.Random;
 
 import tp.p1.lists.GameObjectList;
 import tp.p1.logic.Board;
+import tp.p1.logic.DebugPrinter;
 import tp.p1.logic.SuncoinManager;
 import tp.p1.logic.ZombieManager;
 
@@ -122,6 +123,8 @@ public void setEnd(boolean end) {
 			
 			break;
 		case "DEBUG": 
+			//DebugPrinter Print = new DebugPrinter (board,game);
+			
 			break;
 			default: break;
 		}
