@@ -1,8 +1,5 @@
 package tp.p1.logic;
 
-import tp.p1.lists.GameObjectList;
-//import tp.p1.objects.Plants;
-import tp.p1.objects.GameObject;
 import tp.p1.controller.Game;
 
 public abstract class DebugPrinter extends BoardPrinter {
@@ -16,8 +13,9 @@ public abstract class DebugPrinter extends BoardPrinter {
     
     public DebugPrinter(String []board, Game game){
         super(board);
-        printGame(game);
-        //GameObjectList obList = new GameObjectList();   
+        printGame(game);  
+        encodeGame(game);
+        
     }
 
     
@@ -53,7 +51,8 @@ public abstract class DebugPrinter extends BoardPrinter {
                                for (int j=0; j<this.sizeBoardX; j++) {
                                /////aqui se pone lo que va dentro del cuadrito. en el array
 					str.append( MyStringUtils.centre(board[i], cellSize)).append(vDelimiter);
-                               
+        //necesito una condicion para pintar uno por uno los objetos. es decir
+					//algo como un ExistList 
 				}
 				str.append(lineDelimiter);  
 		}}

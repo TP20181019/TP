@@ -7,13 +7,15 @@ public abstract class BoardPrinter implements GamePrinter {
 	
 	protected String[] board;
 	protected static final String space = " ";
+	static final int MAX = 100;
 	
-	public BoardPrinter (String[] board) {
-		this.board = board;
+	public BoardPrinter () {
+		for(int i = 0; i < MAX; i++) {
+			board[i] = null;
+		}
 		
 	}
 	public abstract void encodeGame(Game game);
-	public abstract String printGame(Game game);
 	public static String boardToString (int cellSize) {
 		
 		return null;

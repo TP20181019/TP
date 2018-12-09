@@ -2,7 +2,9 @@ package tp.p1.command;
 
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
+import tp.p1.logic.BoardPrinter;
 import tp.p1.logic.GamePrinter;
+import tp.p1.logic.ReleasePrinter;
 
 public class PrintModeCommand extends Command{
 	private String mode;
@@ -21,13 +23,20 @@ public class PrintModeCommand extends Command{
 	}
 	@Override
 	public void execute(Game game, Controller controller) {
-		
+		if(mode.equalsIgnoreCase("RELEASE")) {
+			
+		}
 	}
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {
-		if (( commandWords.length==1)&& commandWords[0].equalsIgnoreCase(""))
-			return new ResetCommand();
-		return null;
+		Command cm = null;
+		if (( commandWords.length==2)&& commandWords[0].equalsIgnoreCase("MODE")) {
+			if(commandWords[1].equalsIgnoreCase("REALESE"))
+				cm = new PrintModeCommand("realese");
+			else if(commandWords[1].equalsIgnoreCase("DEBUG"))
+				cm = new PrintModeCommand("debug");
+		}
+		return cm;
 	}
 }
 	

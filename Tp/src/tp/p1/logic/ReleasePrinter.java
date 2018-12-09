@@ -5,7 +5,7 @@ import tp.p1.objects.GameObject;
 
 
 
-public class ReleasePrinter {
+public class ReleasePrinter extends BoardPrinter{
     private final int dimX =4; 
 private final int dimY = 8;
 private String[][] board;
@@ -13,14 +13,16 @@ private static final String space = " ";
 
 public ReleasePrinter() {
 	
-	
+	super();
 	encodeGame();
 }
-private void encodeGame() {
+public void encodeGame(Game game) {
 	board = new String[dimX][dimY];
 	for(int i = 0; i < dimX; i++) {
 		for(int j = 0; j < dimY; j++) {
                         board [i][j] = "lool";// aqui va lo de dentro del cuadro.
+                        //Debe haber un metodo para que lo pinte directamente? 
+                        //llama al toString?
                         
 			/*Peashooter ps = game.getPeashooterList().existInList(i, j);
 			if (ps != null)
@@ -64,6 +66,11 @@ public String toString() {
 			str.append(lineDelimiter);
 	}
 	return str.toString();
+}
+@Override
+public String printGame(Game game) {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 }
