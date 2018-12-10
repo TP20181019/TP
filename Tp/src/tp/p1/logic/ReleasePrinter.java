@@ -6,20 +6,20 @@ import tp.p1.objects.GameObject;
 
 
 public class ReleasePrinter extends BoardPrinter{
-    private final int dimX =4; 
-private final int dimY = 8;
-private String[][] board;
-private static final String space = " ";
-
-public ReleasePrinter() {
 	
+	private final int dimX = 4; 
+    private final int dimY = 8;
+    private String[][] board;
+    private static final String space = " ";
+
+public ReleasePrinter(Game game) {
 	super();
-	encodeGame();
+	encodeGame(game);
 }
 public void encodeGame(Game game) {
-	board = new String[dimX][dimY];
-	for(int i = 0; i < dimX; i++) {
-		for(int j = 0; j < dimY; j++) {
+	board = new String[getDimX()][getDimY()];
+	for(int i = 0; i < getDimX(); i++) {
+		for(int j = 0; j < getDimY(); j++) {
                         board [i][j] = "lool";// aqui va lo de dentro del cuadro.
                         //Debe haber un metodo para que lo pinte directamente? 
                         //llama al toString?
@@ -50,7 +50,7 @@ public String toString() {
 	String vDelimiter = "|";
 	String hDelimiter = "-";
 	
-	String rowDelimiter = MyStringUtils.repeat(hDelimiter, (dimY * (cellSize + 1)) - 1);
+	String rowDelimiter = MyStringUtils.repeat(hDelimiter, (getDimY() * (cellSize + 1)) - 1);
 	String margin = MyStringUtils.repeat(space, marginSize);
 	String lineDelimiter = String.format("%n%s%s%n", margin + space, rowDelimiter);
 	
@@ -58,9 +58,9 @@ public String toString() {
 	
 	str.append(lineDelimiter);
 	
-	for(int i=0; i<dimX; i++) {
+	for(int i=0; i<getDimX(); i++) {
 			str.append(margin).append(vDelimiter);
-			for (int j=0; j<dimY; j++) {
+			for (int j=0; j<getDimY(); j++) {
 				str.append( MyStringUtils.centre(board[i][j], cellSize)).append(vDelimiter);
 			}
 			str.append(lineDelimiter);

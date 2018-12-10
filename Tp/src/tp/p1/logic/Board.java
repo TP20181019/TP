@@ -7,7 +7,12 @@ public class Board {
 	private GameObjectList listPlants;
 	private GameObjectList listZombies;
 	
-	
+public Board() {
+		
+		this.listPlants = new GameObjectList();
+		this.listZombies = new GameObjectList();
+	}
+
 	public GameObjectList getListPlants() {
 		return listPlants;
 	}
@@ -22,12 +27,6 @@ public class Board {
 
 	public void setListZombies(GameObjectList listZombies) {
 		this.listZombies = listZombies;
-	}
-	
-	public Board() {
-		
-		this.listPlants = new GameObjectList();
-		this.listZombies = new GameObjectList();
 	}
 
 	public void addPlant(GameObject p) {

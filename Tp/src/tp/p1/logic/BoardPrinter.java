@@ -10,14 +10,14 @@ public abstract class BoardPrinter implements GamePrinter {
 	static final int MAX = 100;
 	
 	public BoardPrinter () {
-		for(int i = 0; i < MAX; i++) {
-			board[i] = null;
+		//for(int i = 0; i < MAX; i++) {
+		//	board[i] = null;
 		}
 		
-	}
+	
 	public abstract void encodeGame(Game game);
 	public static String boardToString (int cellSize) {
-		
-		return null;
+		return boardToString(cellSize);
 	}
+	
 }

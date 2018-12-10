@@ -91,4 +91,10 @@ public class GameObjectList {
 		}
 	}
 
+
+	public void getList(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
