@@ -11,4 +11,10 @@ public class SportyZombie extends Zombie{
 		return  new String ("X["+ getLife() +"]");	
 	}
 
+	@Override
+	public String toStringDebug() {
+		return new String("X[l:" + getLife()+ ",x:" + getX() + 
+				",y:" + getY() + ",t:" + getCycle() % 1 + "]");
+	}
+
 }

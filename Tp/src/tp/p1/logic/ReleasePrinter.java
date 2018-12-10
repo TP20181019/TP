@@ -12,45 +12,37 @@ public class ReleasePrinter extends BoardPrinter{
     private String[][] board;
     private static final String space = " ";
 
-public ReleasePrinter(Game game) {
-	super();
-	encodeGame(game);
-}
-public void encodeGame(Game game) {
-	board = new String[getDimX()][getDimY()];
-	for(int i = 0; i < getDimX(); i++) {
-		for(int j = 0; j < getDimY(); j++) {
-                        board [i][j] = "lool";// aqui va lo de dentro del cuadro.
-                        //Debe haber un metodo para que lo pinte directamente? 
-                        //llama al toString?
-                        
-			/*Peashooter ps = game.getPeashooterList().existInList(i, j);
-			if (ps != null)
-				board[i][j] = "P[" + ps.getVida() + "]";
-			else {
-				Sunflower sf = game.getSunflowerList().existInList(i, j);
-				if (sf != null)
-					board[i][j] = "S[" + sf.getVida() + "]";
-				else {
-					Zombie z = game.getZombieList().existInList(i, j);
-					if (z!= null)
-						board[i][j] = "Z[" + z.getVida() + "]";
-					else 
-						board[i][j] = space;
-				}
-			}*/
-		}
-	}
-}
+    public ReleasePrinter(Game game){
+    	for(int i = 0; i < dimX; i ++) {
+    		for(int j = 0; j < dimY; j++)
+    			this.board[i][j] = space;
+    	}
+        encodeGame(game);
+             
+    }
+
+    
+    public void encodeGame (Game game){
+    	
+        for ( int i  = 0; i< game.getBoard().getListPlants().getStack() ; i++){
+        	GameObject obj = game.getBoard().getListPlants().getList(i);
+        	board[obj.getX()][obj.getY()] = obj.toString(); 
+        }
+        for ( int i  = 0; i< game.getBoard().getListZombies().getStack() ; i++){
+        	GameObject obj = game.getBoard().getListZombies().getList(i);
+        	board[obj.getX()][obj.getY()] = obj.toString(); 
+        }
+    
+    }
 //*/
-public String toString() {
+public String printGame(Game game) {
 
 	int cellSize = 7;
 	int marginSize = 2;
 	String vDelimiter = "|";
 	String hDelimiter = "-";
 	
-	String rowDelimiter = MyStringUtils.repeat(hDelimiter, (getDimY() * (cellSize + 1)) - 1);
+	String rowDelimiter = MyStringUtils.repeat(hDelimiter, (dimY * (cellSize + 1)) - 1);
 	String margin = MyStringUtils.repeat(space, marginSize);
 	String lineDelimiter = String.format("%n%s%s%n", margin + space, rowDelimiter);
 	
@@ -58,19 +50,14 @@ public String toString() {
 	
 	str.append(lineDelimiter);
 	
-	for(int i=0; i<getDimX(); i++) {
+	for(int i=0; i<dimX; i++) {
 			str.append(margin).append(vDelimiter);
-			for (int j=0; j<getDimY(); j++) {
+			for (int j=0; j<dimY; j++) {
 				str.append( MyStringUtils.centre(board[i][j], cellSize)).append(vDelimiter);
 			}
 			str.append(lineDelimiter);
 	}
 	return str.toString();
-}
-@Override
-public String printGame(Game game) {
-	// TODO Auto-generated method stub
-	return null;
 }
 
 }

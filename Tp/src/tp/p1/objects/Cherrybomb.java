@@ -15,4 +15,9 @@ public class Cherrybomb extends Plants {
 	public String  toString () {
 		return  new String ("C["+ getLife() +"]");	
 	}
+	@Override
+	public String toStringDebug() {
+		return new String("C[l:" + getLife()+ ",x:" + getX() + 
+				",y:" + getY() + ",t:" + getCycle() % 2 + "]");
+	}
 }

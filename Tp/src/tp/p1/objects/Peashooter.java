@@ -20,4 +20,10 @@ public class Peashooter extends Plants{
 	public String  toString () {
 		return  new String ("P["+ getLife() +"]");	
 	}
+
+	@Override
+	public String toStringDebug() {
+		return new String("P[l:" + getLife()+ ",x:" + getX() + 
+				",y:" + getY() + ",t:" + getCycle() % 1 + "]");
+	}
 }

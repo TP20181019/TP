@@ -63,12 +63,8 @@ public abstract class GameObject {
 		this.name = name;
 	}
 	
-	public String toString () {
-		
-		/*String print = this.name + "["+ this.life + ","+ "vidaTotal" + ",x:"+this.x + 
-				",y:" + this.y + ",t:"+this.cycle;*/
-		
-		return toString();
-	}
+	public abstract String toString ();
+
+	public abstract String toStringDebug();
 
 }

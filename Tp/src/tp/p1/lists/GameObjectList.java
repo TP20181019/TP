@@ -92,9 +92,8 @@ public class GameObjectList {
 	}
 
 
-	public void getList(int i) {
-		// TODO Auto-generated method stub
-		
+	public GameObject getList(int i) {
+		return this.list[i];
 	}
 
 }

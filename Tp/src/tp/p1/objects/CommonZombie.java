@@ -7,4 +7,15 @@ public class CommonZombie extends Zombie{
 		super(x,y, vida, zombieName );
 	}
 
+	@Override
+	public String toString() {
+		return  new String ("Z["+ getLife() +"]");	
+	}
+
+	@Override
+	public String toStringDebug() {
+		return new String("Z[l:" + getLife()+ ",x:" + getX() + 
+				",y:" + getY() + ",t:" + getCycle() % 2 + "]");
+	}
+
 }

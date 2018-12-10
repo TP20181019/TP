@@ -16,6 +16,11 @@ public class Sunflower extends Plants{
 	public String  toString () {
 		return  new String ("S["+ getLife() +"]");	
 	}
+	@Override
+	public String toStringDebug() {
+		return new String("S[l:" + getLife()+ ",x:" + getX() + 
+				",y:" + getY() + ",t:" + getCycle() % 3 + "]");
+	}
 
 }
 

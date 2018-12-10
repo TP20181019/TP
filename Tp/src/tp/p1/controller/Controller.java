@@ -8,6 +8,7 @@ import java.util.Scanner;
 import tp.p1.command.Command;
 import tp.p1.command.CommandParser;
 import tp.p1.logic.GamePrinter;
+import tp.p1.logic.ReleasePrinter;
 
 /**
  * @author Michelle
@@ -54,6 +55,8 @@ public class Controller {
 
 
 	private void printGame() {
+		ReleasePrinter print = new ReleasePrinter(this.game);
+		print.printGame(game);
 		
 	}
 }
