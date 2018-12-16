@@ -1,21 +1,34 @@
 package tp.p1.objects;
 
-public class Wallnut extends Plants {
+public class Wallnut extends Plant {
+	
+	private static String longName = "WALLNUT";
+	private static String shortName = "N";
 
 	public Wallnut(int x, int y) {
-		super(x, y, 10, "N");
+		super(x, y, shortName);
+		setCost(50);
+		setHarm(0);
+		setLife(10);
 		
 	}
 	public Wallnut() {
-		super(-1, -1, 0, "N");
+		super(-1, -1, shortName);
 	}
 	@Override
 	public String toString() {
-		return  new String ("N["+ getLife() +"]");	
+		return  new String ( shortName + "["+ getLife() +"]");	
 	}
 	@Override
 	public String toStringDebug() {
-		return new String("P[l:" + getLife()+ ",x:" + getX() + 
+		return new String( shortName + "[l:" + getLife()+ ",x:" + getX() + 
 				",y:" + getY() + ",t:" + getCycle() % 10 + "]");
+	}
+	@Override
+	public Plant parse(String plantName, int x, int y) {
+		if(plantName.equalsIgnoreCase(longName) || plantName.equalsIgnoreCase(shortName))
+			return new Wallnut(x, y);
+		else
+			return null;
 	}
 }

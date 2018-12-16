@@ -3,7 +3,7 @@ package tp.p1.command;
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
 
-public class ListCommand extends Command {
+public class ListCommand extends NoParamsCommand {
 	private static String cmName = "list";
 	private static String cmText = "[L]ist:";
 	private static String cmInfo = " print the list of available plants.";
@@ -18,11 +18,5 @@ public class ListCommand extends Command {
 		
 	}
 	
-	@Override
-	public Command parse(String[] commandWords, Controller controller) {
-		if (( commandWords.length==1)&& ( commandWords[0].equalsIgnoreCase("L") || commandWords[0].equalsIgnoreCase("LIST")))
-			return new ListCommand();
-		else return null;
-	}
 
 }

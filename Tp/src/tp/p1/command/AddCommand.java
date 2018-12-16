@@ -2,6 +2,8 @@ package tp.p1.command;
 
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
+import tp.p1.objects.PlantFactory;
+import tp.p1.objects.Plant;
 
 public class AddCommand extends Command{
 	
@@ -28,7 +30,8 @@ public class AddCommand extends Command{
 	
 	@Override
 	public void execute(Game game, Controller controller) {
-		game.addPlant();
+		Plant plant = PlantFactory.getPlant(plantName, x, y);
+		game.addPlant(plant, x, y);
 		
 	}
 	@Override
@@ -48,8 +51,11 @@ public class AddCommand extends Command{
 			else if(commandWords[1].equalsIgnoreCase("N")) {
 				this.plantName = "N";
 			}
+			else
+				return null;
 			this.x = Integer.parseInt(commandWords[2]);
 			this.y = Integer.parseInt(commandWords[3]);
+			cm = new AddCommand(x, y, plantName);
 		}
 		return cm;
 	}

@@ -2,34 +2,30 @@ package tp.p1.objects;
 
 public class ZombieFactory {
 	
-	private Zombie avilableZombies;
-	
-	public ZombieFactory() {
-		
-	}
+private static Zombie[] availableZombies = {
 			
-			//new CommonZombie();
-			//new BucketheadZombie();
-			//new SportyZombie();
-
+			new CommonZombie(),
+			new SportyZombie(),
+			new BucketheadZombie()
+	};
 	
-	public Zombie getZombie() {
-		return null;
-		
+	public static Zombie getZombie(String zombieName, int x, int y){
+		Zombie z = null;
+		for (Zombie zombie:availableZombies){
+			z= zombie.parse(zombieName, x, y);
+			if (z!=null) 
+				return z;
+		}
+		return z;
 	}
 	
-	public static String infoAvailableZombies() {
-		return null;
-		
-		
-	}
-
-	public Zombie getAvilableZombies() {
-		return avilableZombies;
-	}
-
-	public void setAvilableZombies(Zombie avilableZombies) {
-		this.avilableZombies = avilableZombies;
+	public static String infoAvailableZombies(){
+		String s = "";
+		for(int i = 0; i < ZombieFactory.availableZombies.length; i++){
+			Zombie z = ZombieFactory.availableZombies[i];
+			s+= z.getInfo() + System.lineSeparator();
+		}
+		return s;
 	}
 
 }

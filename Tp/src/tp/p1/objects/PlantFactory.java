@@ -3,28 +3,7 @@ package tp.p1.objects;
 
 public class PlantFactory {
 	
-	public final static String P = "Peashooter";
-	public final static String S = "Sunflower";
-	public final static String C = "Cherrybomb";
-	public final static String N = "Wallnut";
-	private static int x;
-	private static int y;
-	
-	public PlantFactory() {
-		// TODO Auto-generated constructor stub
-	}
-	public Plants createPlant ( String plantName ) {
-		switch (plantName) {
-		case P: return new Peashooter(x, y);
-		case S: return new Sunflower(x,y);
-		case C: return new Cherrybomb(x,y);
-		case N: return new Wallnut(x,y);
-		default: return null;
-		}
-		
-	}
-	
-	private static Plants[] availablePlants = {
+	private static Plant[] availablePlants = {
 			
 			new Sunflower(),
 			new Peashooter(),
@@ -32,16 +11,20 @@ public class PlantFactory {
 			new Wallnut(),
 	};
 	
-	public static Plants getPlant(String plantName){
-		
-		
-		return null;
-			// sera usado por el comando addPlant 
+	public static Plant getPlant(String plantName, int x, int y){
+		Plant p = null;
+		for (Plant plant:availablePlants){
+			p= plant.parse(plantName, x, y);
+			if (p!=null) 
+				return p;
+		}
+		return p;
 	}
+	
 	public static String infoAvailablePlants(){
 		String s = "";
 		for(int i = 0; i < PlantFactory.availablePlants.length; i++){
-			Plants p = PlantFactory.availablePlants[i];
+			Plant p = PlantFactory.availablePlants[i];
 			s+= p.getInfo() + System.lineSeparator();
 		}
 		return s;

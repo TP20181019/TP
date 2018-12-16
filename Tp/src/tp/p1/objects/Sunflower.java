@@ -2,24 +2,34 @@
 package tp.p1.objects;
 
 
-public class Sunflower extends Plants{
-	
+public class Sunflower extends Plant{
+	private static String longName = "SUNFLOWER";
+	private static String shortName = "S";
 
 	public Sunflower(int x, int y) {
-		super(x, y, 1, "S");
+		super(x, y, shortName);
 		setCost(20);
 		setHarm(0);
+		setLife(1);
 	}
 	public Sunflower() {
-		super(-1, -1, 0, "S");
+		super(-1, -1, shortName);
 	}
-	public String  toString () {
-		return  new String ("S["+ getLife() +"]");	
+	public String  toString() {
+		String s = shortName + "["+ getLife() +"]";
+		return  s;	
 	}
 	@Override
 	public String toStringDebug() {
-		return new String("S[l:" + getLife()+ ",x:" + getX() + 
+		return new String(shortName + "[l:" + getLife()+ ",x:" + getX() + 
 				",y:" + getY() + ",t:" + getCycle() % 3 + "]");
+	}
+	@Override
+	public Plant parse(String plantName, int x, int y) {
+		if(plantName.equalsIgnoreCase(longName) || plantName.equalsIgnoreCase(shortName))
+			return new Sunflower(x, y);
+		else
+			return null;
 	}
 
 }

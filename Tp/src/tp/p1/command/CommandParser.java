@@ -20,7 +20,8 @@ public class CommandParser {
 		Command cm = null;
 		for (Command command:availableCommands){
 			cm= command.parse(commandWords, controller);
-			if (cm!=null) return cm;
+			if (cm!=null) 
+				return cm;
 		}
 		return cm;
 		

@@ -4,12 +4,14 @@
 package tp.p1.controller;
 
 import java.util.Random;
-
-import tp.p1.lists.GameObjectList;
 import tp.p1.logic.Board;
+import tp.p1.logic.BoardPrinter;
 import tp.p1.logic.DebugPrinter;
+import tp.p1.logic.GamePrinter;
+import tp.p1.logic.ReleasePrinter;
 import tp.p1.logic.SuncoinManager;
 import tp.p1.logic.ZombieManager;
+import tp.p1.objects.Plant;
 
 /**
  * @author Michelle
@@ -21,7 +23,8 @@ public class Game {
 	private SuncoinManager suncoins;
 	private Level level;
 	private Board board;
-	
+	private int dimX = 4;
+	private int dimY = 8;
 	private Random rand;
 	private boolean end;
 	private int winner = 0; //0 = jugador, 1 = zombie, 3 = nadie
@@ -39,14 +42,13 @@ public class Game {
 	 */
 	public Game(Random rand, Level level) {
 		this.cycleCount = 0;
-		this.level = level;
 		this.zombieManager = new ZombieManager(level, rand);
 		this.suncoins = new SuncoinManager();
+		this.level = level;
+		this.board = new Board();
 		this.rand = rand;
 		this.end = false;
 	}
-	
-	
 	
 	public void update(Integer count) {
 		
@@ -65,12 +67,23 @@ public class Game {
 	 * Añade una planta desde facotry??
 	 */
 	
-	public void addPlant() {
-		;
+	public boolean addPlant(Plant plant,int x, int y) {
+		boolean ret;
+		if (x >= dimX || y >= dimY) {
+			ret = false;
+		}
+		else {
+			if(this.board.addPlant(plant))
+				ret = true;
+			else ret = false;
+		}
+		return ret;
 	}
+	
 	public Integer getCycleCount() {
 		return cycleCount;
 	}
+	
 	public void setCycleCount(Integer cycleCount) {
 		this.cycleCount = cycleCount;
 	}
@@ -78,7 +91,8 @@ public class Game {
 	public boolean isFinished() {
 		return this.end;
 	}
-public void setEnd(boolean end) {
+	
+	public void setEnd(boolean end) {
 		this.end = end;
 	}
 
@@ -87,28 +101,31 @@ public void setEnd(boolean end) {
 		this.cycleCount = 0;;
 		
 	}
+	
 	public void showList() {
-		// TODO Auto-generated method stub
 		System.out.println("[S]unflower: Cost: 20 suncoins Harm: 0" + System.lineSeparator() + 
 				"[P]eashooter: Cost: 50 suncoins Harm: 1" + System.lineSeparator() +
 				"Peta[C]ereza: Cost: 50 suncoins Harm: 10" + System.lineSeparator() +
 				"[N]uez: Cost: 50 suncoins Harm: 0" + System.lineSeparator());
 		
 	}
+	
 	public Level getLevel() {
 		return level;
 	}
 	public void setLevel(Level level) {
 		this.level = level;
 	}
+	
 	public Random getRand() {
 		return rand;
 	}
+	
 	public void setRand(Random rand) {
 		this.rand = rand;
 	}
+	
 	public void help() {
-		// TODO Auto-generated method stub
 		System.out.println("Add <plant> <x> <y>: Adds a plant in position x, y." + System.lineSeparator() +
 				"List: Prints the list of available plants." + System.lineSeparator() +
 				"Reset: Starts a new game." + System.lineSeparator() +
@@ -116,18 +133,36 @@ public void setEnd(boolean end) {
 				"Exit: Terminates the program." + System.lineSeparator() +
 				"[none]: Skips cycle." + System.lineSeparator());
 	}
+	
+	public int getDimX() {
+		return dimX;
+	}
+
+	public void setDimX(int dimX) {
+		this.dimX = dimX;
+	}
+
+	public int getDimY() {
+		return dimY;
+	}
+
+	public void setDimY(int dimY) {
+		this.dimY = dimY;
+	}
 
 	public void print(String mode) {
-		switch (mode) {
-		case "REALESE":
-			
-			break;
-		case "DEBUG": 
-			//DebugPrinter Print = new DebugPrinter (board,game);
-			
-			break;
-			default: break;
+		BoardPrinter b = null;
+		if(mode.equalsIgnoreCase("RELEASE")) {
+			this.dimX = 4;
+			this.dimY = 8;
+			b = new ReleasePrinter(dimX, dimY);
 		}
+		else if(mode.equalsIgnoreCase("DEBUG")) {
+			dimX = 1;
+			dimY = board.getStackPlantas() + board.getStackZombies();
+			b = new DebugPrinter(dimX, dimY);
+		}
+		System.out.println(b.printGame(this));
 		
 	}
 
@@ -135,9 +170,6 @@ public void setEnd(boolean end) {
 		return board;
 	}
 
-	public void setBoard(Board board) {
-		this.board = board;
-	}
 
 	
 

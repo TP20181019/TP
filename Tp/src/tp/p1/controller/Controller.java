@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import tp.p1.command.Command;
 import tp.p1.command.CommandParser;
+import tp.p1.logic.BoardPrinter;
 import tp.p1.logic.GamePrinter;
 import tp.p1.logic.ReleasePrinter;
 
@@ -55,8 +56,7 @@ public class Controller {
 
 
 	private void printGame() {
-		ReleasePrinter print = new ReleasePrinter(this.game);
-		print.printGame(game);
-		
+		System.out.println(game.toString());
+		game.print("release");
 	}
 }

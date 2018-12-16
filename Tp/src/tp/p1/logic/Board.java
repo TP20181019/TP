@@ -11,35 +11,37 @@ public Board() {
 		
 		this.listPlants = new GameObjectList();
 		this.listZombies = new GameObjectList();
-	}
+	}	
 
-	public GameObjectList getListPlants() {
-		return listPlants;
-	}
-
-	public void setListPlants(GameObjectList listPlants) {
-		this.listPlants = listPlants;
-	}
-
-	public GameObjectList getListZombies() {
-		return listZombies;
-	}
-
-	public void setListZombies(GameObjectList listZombies) {
-		this.listZombies = listZombies;
-	}
-
-	public void addPlant(GameObject p) {
-		listPlants.add(p);
+	public boolean addPlant(GameObject p) {
+		return listPlants.add(p);
 	}
 	
 	public void addZombie(GameObject z) {
 		listZombies.add(z);
 	}
+	
 	public void deletePlant(GameObject p) {
 		listPlants.delete(p);
 	}
+	
 	public void deleteZombie(GameObject z) {
 		listZombies.delete(z);
+	}
+
+	public int getStackPlantas() {
+		return listPlants.getStack();
+	}
+
+	public int getStackZombies() {
+		return listZombies.getStack();
+	}
+
+	public GameObject getPlant(int i) {
+		return listPlants.getList(i);
+	}
+
+	public GameObject getZombie(int i) {
+		return listZombies.getList(i);
 	}
 }

@@ -25,28 +25,30 @@ public class GameObjectList {
 	}
 	
 	
-	public GameObject existInList(int x, int y) {
+	public boolean existInList(GameObject o) {
 		int i = 0;
-		GameObject ps = null;
 		boolean encuentra = false;
 		while(!encuentra && i < this.stack) {
-			if(this.list[i].getX() == x
-					&& this.list[i].getY() == y) {
+			if(this.list[i].getX() == o.getX()
+					&& this.list[i].getY() == o.getY()) {
 				encuentra = true;
-				ps = this.list[i];
 			}
 			i++;
 		}
-		return ps;
+		return encuentra;
 	}
 	
-	public void add (GameObject p) {
-		// aumenta el tama�o si llega al tope de la lista
-				if(this.stack == this.tam - 1) {
-					this.tam = this.tam*2;
-				}
-		this.list[this.stack ] = p;
-		this.stack = this.stack + 1;
+	public boolean add (GameObject o) {
+		if(this.stack == this.tam - 1) {
+			this.tam = this.tam*2;
+		}
+		if (existInList(o))
+			return false;
+		else {
+			this.list[this.stack ] = o;
+			this.stack = this.stack + 1;
+			return true;
+		}
 	}
 	
 
@@ -60,7 +62,7 @@ public class GameObjectList {
 			if(this.list[i].getX() == x
 					&& this.list[i].getY() == y) {
 				encuentra = true;
-				this.list[i].setVida(this.list[i].getLife() - 1);
+				this.list[i].setLife(this.list[i].getLife() - 1);
 				if(this.list[i].getLife() == 0) {
 					for(int j = i; j < this.stack; j++ )
 						this.list[j] = this.list[j + 1];

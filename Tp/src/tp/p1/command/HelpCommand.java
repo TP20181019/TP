@@ -3,7 +3,7 @@ package tp.p1.command;
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
 
-public class HelpCommand extends Command {
+public class HelpCommand extends NoParamsCommand {
 
 	private static String cmName = "help";
 	private static String cmText = "[H]elp:";
@@ -19,11 +19,4 @@ public class HelpCommand extends Command {
 		
 	}
 
-	@Override
-	public Command parse(String[] commandWords, Controller controller) {
-		if ((commandWords.length==1)&& (commandWords[0].equalsIgnoreCase("H") || commandWords[0].equalsIgnoreCase(cmName)))
-			return new HelpCommand();
-		else 
-			return null;
-	}
 }

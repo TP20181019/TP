@@ -1,23 +1,33 @@
 package tp.p1.objects;
 
-public class Cherrybomb extends Plants {
-
+public class Cherrybomb extends Plant {
+	private static String longName = "CHERRYBOMB";
+	private static String shortName = "C";
+	
 	public Cherrybomb(int x, int y) {
-		super(x, y, 2, "C");
+		super(x, y, shortName);
 		setCost(50);
 		setHarm(10);
+		setLife(2);
 		
 	}
 	public Cherrybomb() {
-		super(-1, -1, 0, "C");
+		super(-1, -1, shortName);
 	}
 
 	public String  toString () {
-		return  new String ("C["+ getLife() +"]");	
+		return  new String (shortName + "["+ getLife() +"]");	
 	}
 	@Override
 	public String toStringDebug() {
-		return new String("C[l:" + getLife()+ ",x:" + getX() + 
+		return new String( shortName + "[l:" + getLife()+ ",x:" + getX() + 
 				",y:" + getY() + ",t:" + getCycle() % 2 + "]");
+	}
+	@Override
+	public Plant parse(String plantName, int x, int y) {
+		if(plantName.equalsIgnoreCase(longName) || plantName.equalsIgnoreCase(shortName))
+			return new Cherrybomb(x, y);
+		else
+			return null;
 	}
 }
