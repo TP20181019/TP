@@ -25,24 +25,26 @@ public class GameObjectList {
 	}
 	
 	
-	public boolean existInList(GameObject o) {
+	public int existInList(int x, int y) {
+		int pos = -1;
 		int i = 0;
 		boolean encuentra = false;
 		while(!encuentra && i < this.stack) {
-			if(this.list[i].getX() == o.getX()
-					&& this.list[i].getY() == o.getY()) {
+			if(this.list[i].getX() == x
+					&& this.list[i].getY() == y) {
 				encuentra = true;
+				pos = i;
 			}
 			i++;
 		}
-		return encuentra;
+		return pos;
 	}
 	
 	public boolean add (GameObject o) {
 		if(this.stack == this.tam - 1) {
 			this.tam = this.tam*2;
 		}
-		if (existInList(o))
+		if (existInList(o.getX(), o.getY()) == -1)
 			return false;
 		else {
 			this.list[this.stack ] = o;
@@ -110,9 +112,30 @@ public class GameObjectList {
 	}
 
 
-	public void attack(GameObjectList list) {
+	public void attack(GameObjectList listObject) {
 		for(int i = 0; i < this.stack; i++) {
-			
+			if(list[i].getName().equalsIgnoreCase("peashooter")) {
+				boolean encuentraZombie = false;
+				int y = list[i].getY();
+				while(y < 8 && !encuentraZombie) {
+					int posZombie = this.existInList(list[i].getX(), y);
+					if(posZombie!= -1) {
+						encuentraZombie = true;
+						listObject[posZombie].
+					}
+				}
+				
+			}
+			else if(list[i].getName().equalsIgnoreCase("cherrybomb"))
+			{
+				
+			}
+			else if(list[i].getName().equalsIgnoreCase("commonzombie")||
+				list[i].getName().equalsIgnoreCase("sportyzombie") ||
+				list[i].getName().equalsIgnoreCase("bucketheadzombie"))
+			{
+				
+			}
 		}
 		
 	}
