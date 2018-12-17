@@ -2,6 +2,7 @@ package tp.p1.command;
 
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
+import tp.p1.objects.PlantFactory;
 
 public class ListCommand extends NoParamsCommand {
 	private static String cmName = "list";
@@ -14,9 +15,7 @@ public class ListCommand extends NoParamsCommand {
 
 	@Override
 	public void execute(Game game, Controller controller) {
-		game.showList();
-		
+		System.out.println(PlantFactory.infoAvailablePlants());	
 	}
-	
 
 }

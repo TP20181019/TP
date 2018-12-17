@@ -31,6 +31,5 @@ public class Sunflower extends Plant{
 		else
 			return null;
 	}
-
 }
 

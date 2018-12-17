@@ -3,7 +3,6 @@
  */
 package tp.p1.logic;
 
-import tp.p1.objects.Sunflower;
 
 /**
  * @author Michelle
@@ -16,10 +15,6 @@ public class SuncoinManager {
 	 */
 	public SuncoinManager() {
 		this.suncoins = 50;
-	}
-	public void sumaSuncoins(Sunflower sf) {
-		if (sf.getCycle()%2 == 0)
-			this.setSuncoins(this.suncoins + 10);
 	}
 	public Integer getSuncoins() {
 		return suncoins;

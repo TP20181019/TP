@@ -4,6 +4,8 @@
 package tp.p1.controller;
 
 import java.util.Random;
+
+import tp.p1.command.Command;
 import tp.p1.logic.Board;
 import tp.p1.logic.BoardPrinter;
 import tp.p1.logic.DebugPrinter;
@@ -12,6 +14,8 @@ import tp.p1.logic.ReleasePrinter;
 import tp.p1.logic.SuncoinManager;
 import tp.p1.logic.ZombieManager;
 import tp.p1.objects.Plant;
+import tp.p1.objects.Zombie;
+import tp.p1.objects.ZombieFactory;
 
 /**
  * @author Michelle
@@ -29,13 +33,6 @@ public class Game {
 	private boolean end;
 	private int winner = 0; //0 = jugador, 1 = zombie, 3 = nadie
 
-	public int getWinner() {
-		return winner;
-	}
-
-	public void setWinner(int winner) {
-		this.winner = winner;
-	}
 
 	/**
 	 * 
@@ -50,10 +47,26 @@ public class Game {
 		this.end = false;
 	}
 	
-	public void update(Integer count) {
-		
+	public void update() {
+		suncoins.setSuncoins(suncoins.getSuncoins() + board.suncoinsAdd());
+		board.updatePlants();
+		board.updateZombies();
+		board.plantsAttack();
+		board.zombiesAttack();
+		this.addZombie();
+		cycleCount++;
 	}
 	
+	private void addZombie() {
+		String[] nameZombies = { "commonzombie", "sportyzombie", "bucketheadzombie"};
+		if(zombieManager.isZombieAdded()) {
+			int n = rand.nextInt(3);
+			int x = rand.nextInt(4);
+			Zombie z = ZombieFactory.getZombie(nameZombies[n], x, 7);
+			board.addZombie(z);
+		}
+	}
+
 	public String toString() {
 		String line;
 		line = "Number of cycles: " + this.getCycleCount()+ "\n" + 
@@ -69,60 +82,16 @@ public class Game {
 	
 	public boolean addPlant(Plant plant,int x, int y) {
 		boolean ret;
-		if (x >= dimX || y >= dimY) {
+		if (x >= dimX || y >= dimY - 1) {
 			ret = false;
 		}
-		else {
+		else if(plant.getCost() < suncoins.getSuncoins()){
 			if(this.board.addPlant(plant))
 				ret = true;
 			else ret = false;
 		}
+		else ret = false;
 		return ret;
-	}
-	
-	public Integer getCycleCount() {
-		return cycleCount;
-	}
-	
-	public void setCycleCount(Integer cycleCount) {
-		this.cycleCount = cycleCount;
-	}
-	
-	public boolean isFinished() {
-		return this.end;
-	}
-	
-	public void setEnd(boolean end) {
-		this.end = end;
-	}
-
-	
-	public void reset() {
-		this.cycleCount = 0;;
-		
-	}
-	
-	public void showList() {
-		System.out.println("[S]unflower: Cost: 20 suncoins Harm: 0" + System.lineSeparator() + 
-				"[P]eashooter: Cost: 50 suncoins Harm: 1" + System.lineSeparator() +
-				"Peta[C]ereza: Cost: 50 suncoins Harm: 10" + System.lineSeparator() +
-				"[N]uez: Cost: 50 suncoins Harm: 0" + System.lineSeparator());
-		
-	}
-	
-	public Level getLevel() {
-		return level;
-	}
-	public void setLevel(Level level) {
-		this.level = level;
-	}
-	
-	public Random getRand() {
-		return rand;
-	}
-	
-	public void setRand(Random rand) {
-		this.rand = rand;
 	}
 	
 	public void help() {
@@ -132,22 +101,6 @@ public class Game {
 				"Help: Prints this help message." + System.lineSeparator() +
 				"Exit: Terminates the program." + System.lineSeparator() +
 				"[none]: Skips cycle." + System.lineSeparator());
-	}
-	
-	public int getDimX() {
-		return dimX;
-	}
-
-	public void setDimX(int dimX) {
-		this.dimX = dimX;
-	}
-
-	public int getDimY() {
-		return dimY;
-	}
-
-	public void setDimY(int dimY) {
-		this.dimY = dimY;
 	}
 
 	public void print(String mode) {
@@ -164,6 +117,76 @@ public class Game {
 		}
 		System.out.println(b.printGame(this));
 		
+	}
+	
+	public boolean isFinished()  {
+		// gana el jugador
+		if(this.zombieManager.getZombiesLeftToAppear() == 0 && board.getStackZombies() == 0){
+			this.end = true;
+			this.winner = 0;
+		}
+		//gana zombies
+		else if ((this.zombieManager.getZombiesLeftToAppear() < 5) && board.ZombiesWin()) {
+				this.end = true;
+				this.winner = 2;
+		}
+		return this.end;
+	}
+	
+	public int getWinner() {
+		return winner;
+	}
+
+	public void setWinner(int winner) {
+		this.winner = winner;
+	}
+	
+	public Integer getCycleCount() {
+		return cycleCount;
+	}
+	
+	public void setCycleCount(Integer cycleCount) {
+		this.cycleCount = cycleCount;
+	}
+	
+	
+	public void setEnd(boolean end) {
+		this.end = end;
+	}
+
+	public void reset() {
+		this.cycleCount = 0;;
+		
+	}
+	public Level getLevel() {
+		return level;
+	}
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+	
+	public Random getRand() {
+		return rand;
+	}
+	
+	public void setRand(Random rand) {
+		this.rand = rand;
+	}
+	
+	public int getDimX() {
+		return dimX;
+	}
+
+	public void setDimX(int dimX) {
+		this.dimX = dimX;
+	}
+
+	public int getDimY() {
+		return dimY;
+	}
+
+	public void setDimY(int dimY) {
+		this.dimY = dimY;
 	}
 
 	public Board getBoard() {

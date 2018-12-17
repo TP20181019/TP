@@ -13,14 +13,14 @@ import tp.p1.controller.Level;
  */
 public class ZombieManager {
 
+	private Integer zombiesLeftToAppear;
+	private int frecuence;
+	private Random rand;
+
 	public void setZombiesLeftToAppear(Integer zombiesLeftToAppear) {
 		this.zombiesLeftToAppear = zombiesLeftToAppear;
 	}
-
-	private Integer zombiesLeftToAppear;
-	private Level level;
-	private int frecuence;
-	private Random rand;
+	
 	public ZombieManager(Level level, Random rand) {
 		// TODO Auto-generated constructor stub
 		if(level == Level.EASY) {

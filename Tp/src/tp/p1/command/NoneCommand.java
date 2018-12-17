@@ -14,13 +14,15 @@ public class NoneCommand extends Command{
 	}
 	@Override
 	public void execute(Game game, Controller controller) {
-		game.update(game.getCycleCount() + 1);
+		game.update();
 		
 	}
-	@Override
+	
 	public Command parse(String[] commandWords, Controller controller) {
-		// TODO Auto-generated method stub
-		return null;
+		if (( commandWords.length==1)&& commandWords[0].equalsIgnoreCase(cmName) || commandWords[0].equalsIgnoreCase("")) {
+			return new NoneCommand();
+		}
+		else return null;
 	}
 
 }

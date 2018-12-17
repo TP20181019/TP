@@ -3,12 +3,11 @@ package tp.p1.objects;
 public class BucketheadZombie extends Zombie {
 	private static String longName = "BUCKETHEADZOMBIE";
 	private static String shortName = "W";
-	private static int walk = 4;
 	
 	public BucketheadZombie(int x, int y) {
 		super(x, y, shortName);
-		setHarm(1);
 		setLife(8);	
+		setSpeed(4);
 	}
 
 	public BucketheadZombie() {
@@ -22,7 +21,7 @@ public class BucketheadZombie extends Zombie {
 	@Override
 	public String toStringDebug() {
 		return new String(shortName + "[l:" + getLife()+ ",x:" + getX() + 
-				",y:" + getY() + ",t:" + getCycle() % walk + "]");
+				",y:" + getY() + ",t:" + getCycle() % this.getSpeed() + "]");
 	}
 
 	@Override

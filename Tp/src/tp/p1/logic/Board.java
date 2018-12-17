@@ -17,8 +17,8 @@ public Board() {
 		return listPlants.add(p);
 	}
 	
-	public void addZombie(GameObject z) {
-		listZombies.add(z);
+	public void addZombie(GameObject p) {
+		listZombies.add(p);
 	}
 	
 	public void deletePlant(GameObject p) {
@@ -43,5 +43,31 @@ public Board() {
 
 	public GameObject getZombie(int i) {
 		return listZombies.getList(i);
+	}
+
+	public void updatePlants() {
+		listPlants.update();
+	}
+
+	public void updateZombies() {
+		listZombies.update();
+		
+	}
+
+	public Integer suncoinsAdd() {
+		return listPlants.suncoinsPlus();
+	}
+
+	public boolean ZombiesWin() {
+		return listZombies.zombiesWin();
+	}
+
+	public void plantsAttack() {
+		listPlants.attack(listZombies);
+		
+	}
+
+	public void zombiesAttack() {
+		listZombies.attack(listPlants);
 	}
 }

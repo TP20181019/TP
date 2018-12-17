@@ -32,7 +32,7 @@ public class AddCommand extends Command{
 	public void execute(Game game, Controller controller) {
 		Plant plant = PlantFactory.getPlant(plantName, x, y);
 		game.addPlant(plant, x, y);
-		
+		game.update();
 	}
 	@Override
 	public Command parse(String[] commandWords, Controller controller) {

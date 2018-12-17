@@ -10,7 +10,7 @@ public abstract class GameObject {
 		
 		this.x = x;
 		this.y = y;
-		this.setCycle(1);
+		this.setCycle(0);
 		this.name = name;
 	
 	}
@@ -31,14 +31,7 @@ public abstract class GameObject {
 		this.y = y;
 	}
 
-	public void update() {
-		this.cycle++;
-	}
-	
-	public String getInfo() {
-		return "x:" + this.x + ",y:" + this.y + ",t:" + this.cycle;
-		
-	}
+	public abstract String getInfo();
 
 	public int getCycle() {
 		return cycle;
@@ -56,12 +49,13 @@ public abstract class GameObject {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public abstract int getLife();
 	public abstract void setLife(int i);
 	public abstract String toString ();
-
 	public abstract String toStringDebug();
+	public abstract void update();
+
 
 
 }

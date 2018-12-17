@@ -2,8 +2,10 @@ package tp.p1.command;
 
 import tp.p1.controller.Controller;
 import tp.p1.controller.Game;
+import tp.p1.objects.PlantFactory;
+import tp.p1.objects.ZombieFactory;
 
-public class ZombieListCommand extends Command{
+public class ZombieListCommand extends NoParamsCommand{
 	
 	private static String cmName = "zombieList";
 	private static String cmText = "zombieList:";
@@ -14,17 +16,9 @@ public class ZombieListCommand extends Command{
 		super(cmName, cmText, cmInfo);
 	}
 
-	@Override
 	public void execute(Game game, Controller controller) {
-		// TODO Auto-generated method stub
-		
+		System.out.println(ZombieFactory.infoAvailableZombies());	
 	}
 
-	@Override
-	public Command parse(String[] commandWords, Controller controller) {
-		if (( commandWords.length==1)&& ( commandWords[0].equalsIgnoreCase(cmName)))
-			return new ResetCommand();
-		return null;
-	}
 
 }

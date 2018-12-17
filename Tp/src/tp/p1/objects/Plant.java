@@ -34,6 +34,14 @@ public abstract class Plant extends GameObject{
 	public void setLife(int life) {
 		this.life = life;
 	}
+	
+	public String getInfo() {
+		return this.name + ": " + "Cost: "+ this.cost + " suncoins  Harm: " + this.harm;
+	}
+	
+	public void update() {
+		this.setCycle(this.getCycle() + 1);
+	}
 
 	public abstract Plant parse(String plantName, int x, int y);
 }

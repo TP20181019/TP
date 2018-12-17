@@ -55,22 +55,9 @@ public class GameObjectList {
 	public int getStack() {
 		return stack;
 	}
-	public void  updateToList(int x, int y) {
-		int i = 0;
-		boolean encuentra = false;
-		while(!encuentra && i < this.stack) {
-			if(this.list[i].getX() == x
-					&& this.list[i].getY() == y) {
-				encuentra = true;
-				this.list[i].setLife(this.list[i].getLife() - 1);
-				if(this.list[i].getLife() == 0) {
-					for(int j = i; j < this.stack; j++ )
-						this.list[j] = this.list[j + 1];
-					this.setStack(this.getStack() - 1);
-				}
-			}
-			i++;
-		}
+	public void  update() {
+		for(int i = 0; i < this.stack; i++)
+			list[i].update();
 	}
 
 
@@ -98,4 +85,38 @@ public class GameObjectList {
 		return this.list[i];
 	}
 
+
+	public Integer suncoinsPlus() {
+		Integer suncoins = 0;
+		for (int i = 0; i < this.stack; i++) {
+			if(list[i].getName().equalsIgnoreCase("SUNFLOWER"))
+				if(list[i].getCycle()% 2 == 0)
+					suncoins += 10;
+		}
+			
+		return suncoins;
+	}
+
+
+	public boolean zombiesWin() {
+		boolean win = false;
+		int i = 0;
+		while(i < stack && !win) {
+			if(list[i].getY() == 0)
+				win = true;
+			i++;
+		}
+		return win;
+	}
+
+
+	public void attack(GameObjectList list) {
+		for(int i = 0; i < this.stack; i++) {
+			
+		}
+		
+	}
+
+
 }
+ 
