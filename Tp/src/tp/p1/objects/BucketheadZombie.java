@@ -11,7 +11,7 @@ public class BucketheadZombie extends Zombie {
 	}
 
 	public BucketheadZombie() {
-		super(-1, -1, shortName);
+		this(-1, -1);
 	}
 
 	public String  toString () {

@@ -13,7 +13,7 @@ public class Sunflower extends Plant{
 		setLife(1);
 	}
 	public Sunflower() {
-		super(-1, -1, shortName);
+		this(-1, -1);
 	}
 	public String  toString() {
 		String s = shortName + "["+ getLife() +"]";

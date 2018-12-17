@@ -2,18 +2,18 @@ package tp.p1.objects;
 
 public class Wallnut extends Plant {
 	
-	private static String longName = "WALLNUT";
+	private static String longName = "nuez";
 	private static String shortName = "N";
 
 	public Wallnut(int x, int y) {
-		super(x, y, shortName);
+		super(x, y, longName);
 		setCost(50);
 		setHarm(0);
 		setLife(10);
 		
 	}
 	public Wallnut() {
-		super(-1, -1, shortName);
+		this(-1,-1);
 	}
 	@Override
 	public String toString() {

@@ -11,7 +11,7 @@ public class CommonZombie extends Zombie{
 	}
 
 	public CommonZombie() {
-		super(-1, -1, shortName);
+		this(-1, -1);
 	}
 
 	@Override

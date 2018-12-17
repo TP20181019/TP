@@ -36,7 +36,7 @@ public abstract class Plant extends GameObject{
 	}
 	
 	public String getInfo() {
-		return this.name + ": " + "Cost: "+ this.cost + " suncoins  Harm: " + this.harm;
+		return this.getName() + ": " + "Cost: "+ this.cost + " suncoins  Harm: " + this.harm;
 	}
 	
 	public void update() {

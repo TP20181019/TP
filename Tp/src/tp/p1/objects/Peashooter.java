@@ -13,19 +13,19 @@ public class Peashooter extends Plant{
 	}
 	
 	public Peashooter() {
-		super(-1, -1, "P");
+		this(-1, -1);
 	}
 	public boolean aparecer (){
 		return false;		
 	}
 	
 	public String  toString () {
-		return  new String ("P["+ getLife() +"]");	
+		return  new String (shortName + "["+ getLife() +"]");	
 	}
 
 	@Override
 	public String toStringDebug() {
-		return new String("P[l:" + getLife()+ ",x:" + getX() + 
+		return new String(shortName + "[l:" + getLife()+ ",x:" + getX() + 
 				",y:" + getY() + ",t:" + getCycle() % 1 + "]");
 	}
 

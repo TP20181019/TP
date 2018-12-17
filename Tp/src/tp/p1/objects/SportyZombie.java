@@ -11,7 +11,7 @@ public class SportyZombie extends Zombie{
 	}
 	
 	public SportyZombie() {
-		super(-1, -1, shortName);
+		this(-1, -1);
 	}
 
 

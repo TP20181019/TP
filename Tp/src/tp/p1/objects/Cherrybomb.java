@@ -12,7 +12,7 @@ public class Cherrybomb extends Plant {
 		
 	}
 	public Cherrybomb() {
-		super(-1, -1, shortName);
+		this(-1, -1);
 	}
 
 	public String  toString () {
